@@ -17,7 +17,7 @@
 		<hutool.version>4.1.19</hutool.version>
 		<swagger2.version>2.9.2</swagger2.version>
 		<druid.version>1.0.25</druid.version>
-		<fastjson.version>1.2.4</fastjson.version>
+		<fastjson.version>1.2.25.sec10</fastjson.version>
 	</properties>
 	
 	<!-- 版本管理 -->
