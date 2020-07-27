@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link rel="stylesheet" href="${ctxPath}/assets/libs/layui/css/layui.css"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/module/admin.css"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/module/dtree/dtree.css"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/module/dtree/font/dtreefont.css">
+    <link rel="stylesheet" href="${ctxPath}/assets/module/formSelects/formSelects-v4.css"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/css/viewer.min.css">
+    <link rel="stylesheet" href="${ctxPath}/css/public.css">
+    <link rel="stylesheet" href="${ctxPath}/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${ctxPath}/css/style_boot.css">
+
+</head>
+
+<body class="childrenBody">
+
+<div class="container">
+    <form class="layui-form ">
+        <input type="hidden" id="docPicUrl" name="docPicUrl" value="${docKnowledge.docPicUrl}">
+        <input type="hidden" id="docPicUrlIds" value="${docKnowledge.docPicUrlIds}" name="docPicUrlIds">
+        <input type="hidden" id="label" value="${docKnowledge.label}">
+
+        <input type="hidden" name="likes" value="${docKnowledge.likes}">
+        <input type="hidden" name="docType" value="${docKnowledge.docType}">
+        <input type="hidden" name="readCount" value="${docKnowledge.readCount}">
+        <input type="hidden" name="badCount" value="${docKnowledge.badCount}">
+        <input type="hidden" name="goodCount" value="${docKnowledge.goodCount}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">已上传文件</label>
+            <div class="layui-input-block">
+                <table class="layui-hide" id="test" lay-filter="test"></table>
+            </div>
+
+
+            <label class="layui-form-label">文件<span style="color: red">*</span></label>
+            <div class="layui-input-block">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal"   id="testList">选择多文件</button>
+                    <div class="layui-upload-list">
+                        <table class="layui-table">
+                            <thead>
+                            <tr><th>文件名</th>
+                                <th>大小</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr></thead>
+                            <tbody id="demoList" lay-verify="demoList" >
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+                <input type="hidden" id="uuid" name="uuid" value="${docKnowledge.uuid}">
+                <label class="layui-form-label">标题<span style="color: red">*</span></label>
+                <div class="layui-input-block">
+                    <input type="text" name="knowledgeName" value="${docKnowledge.knowledgeName}" lay-verify="knowledgeName" name="knowledgeName" placeholder="请输入知识标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">标签<span style="color: red">*</span></label>
+                        <div class="layui-input-block" >
+                            <select name="label" xm-select="label" lay-verType="tips" lay-verify="required">
+                                <!--# for(label in labelList){ -->
+                                <option value="${label.value}">${label.name}</option>
+                                <!--# }-->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item">
+<!--                        下拉框形树-->
+<!--                        <label class="layui-form-label">分类<span style="color: red">*</span></label>-->
+<!--                        <div class="layui-input-block">-->
+<!--                            <ul id="classifyNname" class="dtree" data-id="0" ></ul>-->
+<!--                        </div>-->
+                        <label class="layui-form-label">分类<span style="color: red">*</span></label>
+                        <div class="layui-input-block">
+                            <input type="text" id="classifyParentName" name="classifyParentName" lay-verify="required" readonly="readonly" value="${docKnowledge.classifyName}"
+                                   onclick="getClassify('${docKnowledge.docClassify}'); return false;"
+                                   placeholder="" autocomplete="off" class="layui-input">
+                            <input type="hidden" id="classifyParentUuid" name="docClassify" value="${knowledgeClassify.uuid}">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容图</label>
+                <div class="layui-input-block">
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="test10">上传图片</button>
+                        <div class="layui-upload-list">
+                            <img class="layui-upload-img" src="${docKnowledge.docPicUrl}" lay-verify="pic"  id="demo1" style="width: 100px;height: 100px">
+                            <p id="demoText" ></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">摘要<span style="color: red">*</span></label>
+                <div class="layui-input-block">
+                    <div id = "content1"  hidden="hidden">
+                        ${docKnowledge.knowledgeContent}
+                    </div>
+                    <textarea id="knowledgeContent"  class="layui-textarea" lay-verify="knowledgeContent" name = "knowledgeContent" ></textarea>
+                </div>
+            </div>
+
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否公开<span style="color: red">*</span></label>
+                        <div class="layui-input-block" >
+                            <select name="isReleaseGroup" lay-verify="required" lay-search="">
+                                <option value="">直接选择或搜索选择</option>
+                                <option value="0" ${docKnowledge.isReleaseGroup=='0'?'selected':''} >是</option>
+                                <option value="1" ${docKnowledge.isReleaseGroup=='1'?'selected':''}>否</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">编辑权限<span style="color: red">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="editPermissions" lay-verify="required" lay-search="">-->
+                                <option value="">直接选择或搜索选择</option>
+                                <option value="0" ${docKnowledge.editPermissions=='0'?'selected':''}>创建人</option>
+                                <option value="1" ${docKnowledge.editPermissions=='1'?'selected':''}>所有人</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">阅读权限<span style="color: red">*</span></label>
+                        <div class="layui-input-block">
+                            <select name="readPermissions" lay-verify="required" lay-search="">
+                                <option value="">直接选择或搜索选择</option>
+                                <option value="0" ${docKnowledge.readPermissions=='0'?'selected':''}>创建人</option>
+                                <option value="1" ${docKnowledge.readPermissions=='1'?'selected':''}>所有人</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit="" lay-filter="save-btn">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+</body>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/javascript" src="${ctxPath}/assets/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="${ctxPath}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctxPath}/assets/libs/layui/layui.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/js/common.js"></script>
+<script type="text/javascript" src="${ctxPath}/js/common/Feng.js"></script>
+<script type="text/javascript" src="${ctxPath}/js/common/layui-dtree.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/js/viewer-jquery.min.js"></script>
+<script src="${ctxPath}/bootstrap/js/popper.min.js" type="text/javascript"></script>
+<script>
+    function getClassify(uuid){
+        var dtree = new $DTree('${ctxPath}/doc/classify/getClassifyTree?ids='+uuid, "选择分类","400px","600px");
+        dtree.setIds("classifyParentUuid","classifyParentName");
+        dtree.setCheckbarType("only");
+        dtree.openTree();
+    }
+    function deletePic(event){
+        console.log(event)
+    }
+    let val = $("#label").val();
+    let labels = val.split(",");
+    layui.use(['layer', 'form', 'layedit','element','table', 'util','dtree', 'admin', 'upload','formSelects',], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        var table = layui.table;
+        var layedit = layui.layedit;
+        var admin = layui.admin;
+        var util = layui.util;
+        var upload = layui.upload;
+        var dtree = layui.dtree;
+        var formSelects = layui.formSelects;
+        var element = layui.element;
+        var up_url="{:url('${ctxPath}/file/ue')}";//上传图片url
+        //创建一个编辑器
+        $("#knowledgeContent").val($("#content1").html());
+        layedit = layui.layedit;
+        layedit.set({
+            uploadImage: {
+                //接口url
+                url: '${ctxPath}/file/ue',
+                type: 'post' //默认post
+            },
+        });
+        var editIndex = layedit.build('knowledgeContent',{
+            height : 330
+        });
+
+        form.verify({
+            knowledgeName: function (value) {
+                if (value==''){
+                    return "标题不能为空";
+                }
+            },
+            knowledgeContent: function (value) {
+                if(layedit.getContent(editIndex)==''){
+                    return "摘要不能为空";
+                }
+
+            },
+            demoList: function (value) {
+                if($("#demoList").text()==''){
+                    return "请上传文件";
+                }
+            },
+            pic: function () {
+                let pic = $("#demo1").attr("src");
+                if(pic==undefined){
+                    return "请上传内容图";
+                }
+                console.log(pic);
+            }
+        });
+
+        //上传内容图
+        var uploadInst=upload.render({
+            elem: '#test10'
+            ,url: '${ctxPath}/file'
+            ,method: 'get'
+            ,multiple: true
+            ,acceptMime: 'image/*'
+            ,accept: 'images'
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                console.log(res);
+                //如果上传失败
+                if(res.code > 0){
+                    return layer.msg('上传失败');
+                }else{
+                    $("#docPicUrl").val(res.fileUrl);
+                }
+                //上传成功
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+
+
+
+        var PicResourceArr =[];
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: '${ctxPath}/file'
+            ,accept: 'file'
+            ,multiple: true
+            ,auto: false
+            ,size: 10240
+            ,acceptMime: 'image/*,.xls,.xlsx,.rar,.zip,.doc,.docx,.ppt,.pptx,.flv,text/plain'
+            ,exts: 'xls|xlsx|png|jpg|jpeg|doc|docx|ppt|pptx|rar|flv|txt|text|zip|flv|rar'
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1024).toFixed(1) +'kb</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if(res.code==0){ //上传成功
+                    var PicResource ={};
+                    PicResource.docOriginalName=res.fileName;
+                    PicResource.extensionName=res.fileExtensionName;
+                    PicResource.resourceUrl=res.fileUrl;
+                    PicResource.uniqueCode=res.uniqueCode;
+                    PicResource.size=res.size;
+                    PicResourceArr.push(PicResource);
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    tds.eq(3).html(''); //清空操作
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                }
+                this.error(index, upload);
+            }
+            ,error: function(index, upload){
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+
+
+
+        // dtree.render({
+        //     elem: "#classifyNname",  //绑定元素
+        //     url: "${ctxPath}/doc/knowledge/getDocKnowledgeTree?uuid=${docKnowledge.uuid}&docClassify=${docKnowledge.docClassify}",  //异步接口
+        //     // data: data,
+        //     width: "100%",
+        //     method:"GET",
+        //     dataFormat: "list",  //配置data的风格为list
+        //     select: true //指定下拉树模式
+        // });
+        // //单击节点 监听事件
+        // dtree.on("node('classifyNname')" ,function(param){
+        //     // layer.msg(JSON.stringify(param));
+        // });
+
+
+        formSelects.render('label', {init: labels});
+        form.on('submit(save-btn)', function(data){
+            console.log(data);
+            data.field.lables= formSelects.value('label', 'valStr');
+            data.field.knowledgeContent = layedit.getContent(editIndex);
+            data.field.picResourceArr = JSON.stringify(PicResourceArr);
+            layer.load(2);
+            $.post('${ctxPath}/doc/knowledge/edit',data.field, function (res) {
+                layer.closeAll('loading');
+                if (res.code == 200) {
+                    layer.msg(res.msg, {icon: 1});
+                    window.location='${ctxPath}/doc/knowledge/getKnowledgeClassify';
+                } else {
+                    layer.msg(res.msg, {icon: 2});
+                }
+            }, 'json');
+            return false;
+        });
+
+        var instance = table.render({
+            elem: '#test'
+            ,url:'${ctxPath}/doc/knowledge/picResourceList?parentUuid=${docKnowledge.docPicUrlIds}'
+            ,title: '已传文件表'
+            ,cols: [[
+                {title : 'uui',field : 'uuid',align : 'center',unresize : true,sort : true,hide : true},
+                {field:'docOriginalName', title:'文件名', edit: 'text'}
+                ,{field:'size', title:'大小', width:100}
+                ,{field:'createDate', title:'时间',width:200,templet : "<div>{{layui.util.toDateString(d.createDate, 'yyyy-MM-dd HH:mm:ss')}}</div>"}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+            ]]
+            ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                //,curr: 5 //设定初始在第 5 页
+                ,groups: 1 //只显示 1 个连续页码
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+
+            }
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除已上传文件吗', function(index){
+                    obj.del();
+                    deletes(data.uuid);
+                    layer.close(index);
+                });
+            }
+        });
+        /**
+         * 删除菜单
+         */
+        function deletes(id) {
+
+            $.ajax({
+                type: "delete",
+                url: "${ctxPath}/doc/knowledge/delete",
+                dataType: "json",
+                data: JSON.stringify(id),
+                /*data:{"id":id},*/
+                cache: false,
+                async: false,
+                timeout: 60000,
+                success: function (result) {
+                    if (result.state == 1) {
+                        Feng.success(result.msg);
+                        instance.reload();
+                    } else {
+                        Feng.error(result.msg);
+                    }
+                },
+                error: function (err) {
+                    Feng.error("系统繁忙，请稍后重试！");
+                }
+            });
+        }
+
+    });
+
+
+
+</script>
+
+</html>

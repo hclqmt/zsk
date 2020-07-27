@@ -1,0 +1,17 @@
+#\u6587\u4EF6\u670D\u52A1\u5668\u4FE1\u606F
+file:
+  server:
+    host: 192.168.0.142
+    port: 2002
+    username: base
+    password: ICy5YqxZB1uWSwcVLSNLcA
+
+aliyun:
+  oss:
+    bucketName: hcl-oss
+    dir: images/
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    accessKeyId: LTAI4GG4ELsMJsYMFY7Vy5M9
+    accessKeySecret: OSoU6nzKCZzkYCdYfSH9xtkljRoj50
+    server:
+      enabled: yes

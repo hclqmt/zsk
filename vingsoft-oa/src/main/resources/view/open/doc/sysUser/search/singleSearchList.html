@@ -1,0 +1,113 @@
+<input type="hidden" value="${count}" id="count">
+<input type="hidden" value="${keyWords}" id="keyWord">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+</head>
+<body  >
+
+<div class="container" id="container" >
+    <img class="index_top_banner" src="${ctxPath}/images/index_banner.png" alt="" >
+    <div class="row no-gutters">
+        <div class="col-md-8">
+            <input name="keyWords" id="keyWords" value="${keyWords}" class="form-control form-control-lg index_search" type="text" placeholder="请输入关键词">
+        </div>
+        <div class="col-6 col-md-2">
+            <button type="button" id="search" class="btn  btn-primary btn-lg btn-block">搜索</button>
+        </div>
+        <div class="col-6 col-md-2">
+            <button type="button" class="btn btn-lg btn-outline-primary  btn-block">高级搜索</button>
+        </div>
+    </div>
+    <div class="tips_box">
+        <!--# for(knowledgeKeywords in knowledgeKeywordsList){ -->
+        <a href="${ctxPath}/doc/sysUser/open/searchByLucene?page=1&limit=10&keyWords=${knowledgeKeywords.name}" id="words" class="btn btn-primary btn-sm">${knowledgeKeywords.name}</a>
+        <!--# } -->
+    </div>
+
+    <div id="content">
+        <div class="card index_card shadow-sm " >
+            <div class="card-body">
+                <div class="row" id="typeList">
+                    <!--# for(docKnowledge in docKnowledgeList){ -->
+                    <div class="col-md-12 col-12">
+                        <a onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}')"
+                                href="javascript:void(0);" class="index_zxzs_text _ellipsis"><img src="${ctxPath}/images/index_2.png" alt=""><span>${docKnowledge.knowledgeName}</span></a>
+                        <p class="index_zxzs_time">${docKnowledge.knowledgeContent}</p>
+                        <p class="index_zxzs_time">${docKnowledge.createDateStr}</p>
+                    </div>
+                    <!--# } -->
+                </div>
+                <div id="test1" ></div>
+            </div>
+        </div >
+    </div>
+</div>
+<link rel="stylesheet" href="${ctxPath}/assets/libs/layui/css/layui.css"/>
+<link rel="stylesheet" href="${ctxPath}/assets/css/viewer.min.css">
+<link rel="stylesheet" href="${ctxPath}/css/public.css">
+<link rel="stylesheet" href="${ctxPath}/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${ctxPath}/css/style_boot.css">
+<script type="text/javascript" src="${ctxPath}/assets/libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="${ctxPath}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctxPath}/assets/libs/layui/layui.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/js/common.js"></script>
+<script src="${ctxPath}/bootstrap/js/popper.min.js" type="text/javascript"></script>
+<script>
+    const count =$("#count").val();
+    const keyWords =$("#keyWords").val();
+
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: count //数据总数，从服务端得到
+            ,limit: 10
+            ,layout: ['prev', 'page', 'next','skip']
+            ,jump: function(obj, first){
+                console.log(obj);
+                if(first){
+                    return;
+                }
+                $.ajax({
+                    url:'${ctxPath}/doc/sysUser/open/searchPageByLucene?page='+obj.curr+"&limit="+obj.limit+"&keyWords="+keyWords,
+                    type:'get',
+                    dataType:'html',
+                    success:function(res){
+                        $("#typeList").html('');
+                        $("#typeList").html(res);
+                    },
+                    error: function (res) {
+                        console.log(res)
+                    }
+                })
+
+            }
+        });
+    });
+
+    $("#search").click(function () {
+        var keywords = $("#keyWords").val();
+        if(keywords==undefined||keywords==''){
+            layer.msg("请输入关键字")
+            return false;
+        }
+        window.location='${ctxPath}/doc/sysUser/open/searchByLucene?page=1&limit=10&keyWords='+keywords;
+    })
+
+
+    function showInfo(uuid,docClassify,docType) {
+        window.location="${ctxPath}/doc/knowledge/showInfo?uuid="+uuid+"&docClassify="+docClassify+"&docType="+docType;
+    }
+
+
+
+
+
+
+</script>

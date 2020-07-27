@@ -1,0 +1,62 @@
+<!--# layout("/common/_container.html"){ -->
+
+<div style="background-color: white;padding: 5px;">
+	<fieldset class="layui-elem-field layui-field-title" >
+		<legend>请填写菜单信息</legend>
+	</fieldset>
+
+	<form class="layui-form" action="${ctxPath}/doc/classify/add" method="post">
+		<input type="hidden" id="uuid" name="uuid" value="${knowledgeClassify.uuid}">
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">名称</label>
+				<div class="layui-input-inline">
+					<input type="text" id="classifyName" name="classifyName" lay-verify="required" value="${knowledgeClassify.classifyName}"
+						autocomplete="off" placeholder="名称" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">上级菜单</label>
+				<div class="layui-input-inline">
+					<input type="text" id="classifyParentName" name="classifyParentName" lay-verify="required" readonly="readonly" value="${knowledgeClassify.classifyParentName}"
+						   onclick="Info.showDeptSelectTree('${knowledgeClassify.classifyParentUuid}'); return false;"
+						   placeholder="上级菜单" autocomplete="off" class="layui-input">
+					<input type="hidden" id="classifyParentUuid" name="classifyParentUuid" value="${knowledgeClassify.classifyParentUuid}">
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">状态</label>
+				<div class="layui-input-inline">
+					<layui:dictOpt typeCode="enable" name="status" required="true" dictVal="${knowledgeClassify.status}" />
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">排序</label>
+				<div class="layui-input-inline">
+					<input type="number" id="sort" name="sort" lay-verify="IsIntegerPositive" value="${knowledgeClassify.sort}"
+						autocomplete="off" placeholder="排序" class="layui-input">
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="edit-btn">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<style>
+html{
+	background-color: white;
+}
+</style>
+<script src="${ctxPath}/open/classify/info.js"></script>
+
+
+<!--# } -->

@@ -1,0 +1,128 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title></title>
+</head>
+<body >
+
+<div class="container" id="container" >
+	<img class="index_top_banner" src="${ctxPath}/images/index_banner.png" alt="" >
+	<div class="row no-gutters">
+		<div class="col-md-8">
+			<input id="keyWords"  class="form-control form-control-lg index_search" type="text" placeholder="请输入关键词">
+		</div>
+		<div class="col-6 col-md-2">
+			<button type="button" id="search" class="btn  btn-primary btn-lg btn-block">搜索</button>
+		</div>
+		<div class="col-6 col-md-2">
+			<button type="button" class="btn btn-lg btn-outline-primary  btn-block">高级搜索</button>
+		</div>
+	</div>
+	<div class="tips_box">
+		<!--# for(knowledgeKeywords in knowledgeKeywordsList){ -->
+			<a href="${ctxPath}/doc/sysUser/open/searchByLucene?page=1&limit=10&keyWords=${knowledgeKeywords.name}" id="words" class="btn btn-primary btn-sm">${knowledgeKeywords.name}</a>
+		<!--# } -->
+	</div>
+
+	<div id="content">
+		<div class="card index_card shadow-sm ">
+			<div class="card-header">
+				<div class="row">
+					<div class="col">
+						最新知识
+					</div>
+					<div class="col text_right">
+						<a href="${ctxPath}/doc/knowledge/getKnowledgeClassify?type=1" class="">查看更多》</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<!--# for(docKnowledge in docKnowledgeList){ -->
+					<div class="col-md-6 col-12">
+						<a href="${ctxPath}/doc/knowledge/showInfo?uuid=${docKnowledge.uuid}&docClassify=${docKnowledge.docClassify}&docType=${docKnowledge.docType}" class="index_zxzs_text _ellipsis"><img src="${ctxPath}/images/index_2.png" alt=""><span>${docKnowledge.knowledgeName}</span></a>
+						<p class="index_zxzs_time">${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}</p>
+					</div>
+					<!--# } -->
+
+				</div>
+			</div>
+		</div>
+		<div class="card index_card2 shadow-sm ">
+			<div class="card-header">
+				知识分类
+			</div>
+			<div class="card-body">
+				<!--# for(knowledgeClassifyRoot in knowledgeClassifyRootList){ -->
+				<h5 class="card-title">${knowledgeClassifyRoot.classifyName} <img class="mr-1" src="${ctxPath}/images/index_4.png" alt=""><span>${knowledgeClassifyRoot.count}</span></h5>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<!--# for(secondKnowledgeClassify in knowledgeClassifyRoot.childrenClassify){ -->
+						<li class="breadcrumb-item">
+							<a href="javascript:void(0);" onclick="toList('${secondKnowledgeClassify.location}','${secondKnowledgeClassify.uuid}','${secondKnowledgeClassify.classifyName}')"
+							>${secondKnowledgeClassify.classifyName}</a></li>
+						<!--# for(thirdlyKnowledgeClassify in secondKnowledgeClassify.childrenClassify){ -->
+						<li class="breadcrumb-item"><a href="javascript:void(0);" onclick="toList('${thirdlyKnowledgeClassify.location}','${thirdlyKnowledgeClassify.uuid}','${secondKnowledgeClassify.classifyName}')">
+							${thirdlyKnowledgeClassify.classifyName}</a></li>
+						<!--# } -->
+						<!--# } -->
+					</ol>
+				</nav>
+				<!--# } -->
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+<script>
+	function toList(location,docClassify,classifyName) {
+		$.ajax({
+			url:'${ctxPath}/doc/knowledge/getKnowledgeClassify?type=1&isReleaseGroup=0',
+			type:'get',
+			dataType:'html',
+			success:function(res){
+				var obj=$("<code class=\"hljs\"></code>").append($(res))
+				//(需要获取的对应块（如class='aa')
+				var $html = $(".container", obj);
+				console.log($html.html())
+				$("#title").text("当前分类：/"+location);
+				$html.find("#"+classifyName).attr("class","collapse show")
+				$html.find("#iframe").attr("src",'${ctxPath}/openIndex/list?page='+1+"&limit="+10+"&docClassify="+docClassify);
+				$html.find("#title").text("当前分类：/"+location);
+				$("#container").html('');
+				$("#container").html($html.html());
+			},
+			error: function (res) {
+				console.log(res)
+			}
+		})
+	}
+
+	$("#search").click(function () {
+		var keywords = $("#keyWords").val();
+		if(keywords==undefined||keywords==''){
+			layer.msg("请输入关键字")
+			return false;
+		}
+		window.location='${ctxPath}/doc/sysUser/open/searchByLucene?page=1&limit=10&keyWords='+keywords;
+		// $.ajax({
+		// 	url:'${ctxPath}/doc/sysUser/open/searchAjax?keyWords='+keywords+"&page=1&limit=10",
+		// 	type:'get',
+		// 	dataType:'html',
+		// 	success:function(res){
+		// 		$("#content").html('');
+		// 		$("#content").html(res)
+		// 	},
+		// 	error: function (res) {
+		// 		console.log(res)
+		// 	}
+		// })
+	})
+</script>
+
+</html>
+<!--# } -->

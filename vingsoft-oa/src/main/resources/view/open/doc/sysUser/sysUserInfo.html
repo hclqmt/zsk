@@ -1,0 +1,121 @@
+<!--# layout("/common/_container.html"){ -->
+<input type="hidden" value="${sysUser.id}" id="userId" />
+<div class="container">
+    <div class="bd-callout bd-callout-danger" role="alert">
+        当前用户于<strong class="mr-1 ml-1">${sysUser.createDate,"yyyy年MM月dd日 HH时mm分ss秒"}</strong>建立账户，
+        <!--# if(docCount.lastdate==null){ -->
+        至今未发表过一篇文章
+        <!--# }else{ -->
+        于<strong class="mr-1 ml-1">${docCount.firstdate,"yyyy年MM月dd日 HH时mm分ss秒"}</strong>发表第一篇文章，于<strong class="mr-1 ml-1">
+        ${docCount.lastdate,"yyyy年MM月dd日 HH时mm分ss秒"}</strong>发表最后一篇文章。
+        <!--# } -->
+
+    </div>
+    <div class="d-none d-md-block">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td rowspan="2"><img onerror="this.src='${ctxPath}/images/header.png'" src="${sysUser.icon}" alt=""></td><th>用户</th><th>文档数量</th><th>好评文章</th><th>差评文章</th><th>文章好评率</th><th>被访问总量</th><th>累计好评</th><th>累计差评</th>
+<!--                <th>综合评价</th>-->
+            </tr>
+            <tr>
+                <td>${sysUser.nickname}</td><td>${docCount.sumcount}</td><td>${docCount.sumgooddoc}
+            </td><td>${docCount.sumbaddoc}</td><td>${docCount.goodbadlv}</td>
+                <td>${docCount.sumreadcount}</td><td>${docCount.sumgoodcount}</td>
+                <td>${docCount.sumbadcount}</td>
+<!--                <td><button class="btn btn-primary btn-sm"></button></td>-->
+<!--                <td><button class="btn  "></button></td>-->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="row mt-3">
+        <div class="col-md-3 d-none d-md-block list_left_md">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-primary list-group-item-action" href="${ctxPath}/doc/sysUser/updateMyInfo">
+                    修改信息
+                </a>
+                <a class="list-group-item list-group-item-primary list-group-item-action" href="${ctxPath}/doc/sysUser/updateMyPassword">
+                    修改密码
+                </a>
+                <a class="list-group-item list-group-item-primary list-group-item-action" href="javascript:void(0)">
+                    个人档案
+                </a>
+            </div>
+            <div class="list-group mt-2">
+                <a class="list-group-item list-group-item-action" onclick="change('${ctxPath}/doc/sysUser/myKnowledgePageAjax?page=1&limit=6&docType=0&createById=${sysUser.id}');"
+                   href="javascript:void(0);">
+                    知识
+                </a>
+                <a class="list-group-item list-group-item-action" onclick="change('${ctxPath}/doc/sysUser/myKnowledgePageAjax?page=1&limit=6&docType=1&createById=${sysUser.id}');"
+                   href="javascript:void(0);">
+                    资源
+                </a>
+            </div>
+            <div class="list-group mt-2">
+                <a class="list-group-item list-group-item-action" onclick="change('${ctxPath}/doc/sysUser/leaveMessageList?page=1&limit=2&sysUserId=${sysUser.id}');"
+                   href="javascript:void(0);">
+                    留言板
+                </a>
+                <a class="list-group-item list-group-item-action" onclick="change('${ctxPath}/doc/sysUser/myKnowledgePageAjax?page=1&limit=6&docType=&createById=${sysUser.id}');"
+                   href="javascript:void(0)">
+                    关注消息
+                </a>
+                <a class="list-group-item list-group-item-action active"
+                   onclick="change('${ctxPath}/doc/sysUser/myInfoListPageAjax?page=0&limit=6&receiverId=${sysUser.id}');"
+                   href="javascript:void(0)">
+                    我的消息
+                </a>
+                <a class="list-group-item list-group-item-action"
+                   onclick="change('${ctxPath}/doc/sysUser/myPraiseListPageAjax?page=1&limit=6&userId=${sysUser.id}');"
+                   href="javascript:void(0)">
+                    知识评论
+                </a>
+            </div>
+        </div>
+        <div id="allTypeList" class="col-md-9 col-12">
+
+            <iframe id="iframe" src="${ctxPath}/doc/sysUser/myInfoListPageAjax?page=0&limit=6&receiverId=${sysUser.id}" frameborder="0"class="layadmin-iframe">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    layui.config({
+        base: '${ctxPath}/plugins/layuiadmin/'//模块存放的目录
+    }).use(['ajaxCom'],function () {
+        var ajaxCom = layui.ajaxCom;
+        ajaxCom.getAjazList(10,1,23,'typeList')
+    });
+
+    function change(src,event) {
+        event = event ? event : window.event;
+        var obj = event.srcElement ? event.srcElement : event.target;
+        $("a").removeClass("active");
+        $(obj).addClass("active");
+        $("#iframe").attr('src',src);
+    }
+
+    //获得留言板
+    function toAjax(userId) {
+        $.post({
+            url: '${ctxPath}/doc/sysUser/leaveMessageList',
+            data: {"page":1,"sysUserId":userId,"limit":2},
+            dataType: 'html',
+            success: function (res) {
+                console.log(res)
+                $("#allTypeList").html(res);
+            },
+            error: function (res) {
+            }
+        })
+    }
+
+</script>
+
+<!--# } -->

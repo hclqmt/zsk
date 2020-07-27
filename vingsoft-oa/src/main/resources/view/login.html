@@ -1,0 +1,70 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+</head>
+<body style="background:#f5f5f5;overflow-y:scroll" >
+<div class="container" >
+    <input type="hidden" value="${requestURI}" id="prevUrl">
+    <img class="index_top_banner" src="${ctxPath}/images/index_banner.png" alt="">
+    <div class="card _index_card">
+        <div class="card-body" id="register">
+            <form class="layui-form">
+                <div class="form-group ">
+                    <label>用户名</label>
+                    <input type="text" name="username" value="${username}" class="form-control form-control-lg" >
+                </div>
+                <div class="form-group">
+                    <label>输入密码</label>
+                    <input type="password" name="password"  value="${password}" class="form-control form-control-lg">
+                </div>
+                <button type="submit" lay-submit lay-filter="loginSubmit" class="btn btn-lg btn-primary">登录</button>
+                <button type="button" onclick="window.location='${ctxPath}/register'" class="btn btn-lg btn-secondary float-right">注册</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+    let prevUrl = $("#prevUrl").val();
+    layui.use('form', function(){
+        var form = layui.form;
+        // 表单提交
+        form.on('submit(loginSubmit)', function (obj) {
+            layer.load(2);
+            $.post('loginInfo', obj.field, function (res) {
+                if (200 == res.code) {
+                    layer.msg('登录成功', {icon: 1, time: 1500}, function () {
+                        if(prevUrl != ''&&prevUrl != undefined){
+                            // parent.location='${ctxPath}/openIndex?prevUrl=${requestURI}';
+                            postToPage(prevUrl);
+                        }else {
+                            parent.location='${ctxPath}/openIndex';
+                        }
+                    });
+                } else {
+                    layer.closeAll('loading');
+                    layer.msg(res.msg, {icon: 2,});
+                }
+            }, 'JSON');
+            return false;
+        });
+    });
+    //清除路径后面携带参数地址
+    function postToPage(prevUrl) {
+        var f=document.createElement('form');
+        f.style.display='none';
+        f.action='${ctxPath}/openIndex';
+        f.method='post';
+        f.target='_parent';
+        f.innerHTML='<input type="hidden" name="prevUrl" value="'+prevUrl+'"/>';
+        document.body.appendChild(f);
+        f.submit();
+    }
+</script>
+</body>
+</html>
+<!--# } -->

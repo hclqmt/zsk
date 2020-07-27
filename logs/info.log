@@ -1,0 +1,69 @@
+2020-07-20 16:57:03 下午 [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-20 16:57:03 下午 [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-20 16:57:06 下午 [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+INFO:{dataSource-1} inited
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+INFO:Using default implementation for ThreadExecutor
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+INFO:Quartz Scheduler v.2.3.0 created.
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+INFO:RAMJobStore initialized.
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+INFO:Quartz scheduler version: 2.3.0
+2020-07-20 16:57:09 下午 [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@b49c85f
+2020-07-20 16:57:11 下午 [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+INFO:Context refreshed
+2020-07-20 16:57:11 下午 [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+INFO:Found 1 custom documentation plugin(s)
+2020-07-20 16:57:11 下午 [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+INFO:Scanning for api listing references
+2020-07-20 16:57:11 下午 [Thread: main][ Class:com.vingsoft.OaApplication >> Method: com.vingsoft.OaApplication.main(OaApplication.java:53) ]
+INFO:Oa Application is sussess!
+2020-07-20 16:57:12 下午 [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-07-20 16:57:14 下午 [Thread: scheduler_Worker-1][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+INFO:Starting without optional epoll library
+2020-07-20 16:57:14 下午 [Thread: scheduler_Worker-1][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+INFO:Starting without optional kqueue library
+2020-07-20 16:57:50 下午 [Thread: http-nio-2020-exec-1][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:85) ]
+INFO:file
+2020-07-20 16:57:50 下午 [Thread: http-nio-2020-exec-1][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:86) ]
+INFO:Snipaste_2020-07-16_16-41-30.png
+2020-07-20 16:57:50 下午 [Thread: http-nio-2020-exec-1][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:87) ]
+INFO:5779
+2020-07-20 16:57:50 下午 [Thread: http-nio-2020-exec-1][ Class:com.vingsoft.fileManage.core.FileManage >> Method: com.vingsoft.fileManage.core.FileManage.uploadFileToFileManage(FileManage.java:89) ]
+INFO:文件呢路径：Snipaste_2020-07-16_16-41-30.png
+2020-07-20 16:57:56 下午 [Thread: http-nio-2020-exec-7][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:85) ]
+INFO:file
+2020-07-20 16:57:56 下午 [Thread: http-nio-2020-exec-7][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:86) ]
+INFO:Snipaste_2020-07-16_16-41-30.png
+2020-07-20 16:57:56 下午 [Thread: http-nio-2020-exec-7][ Class:com.vingsoft.fileManage.controller.FileController >> Method: com.vingsoft.fileManage.controller.FileController.upload(FileController.java:87) ]
+INFO:5779
+2020-07-20 16:57:56 下午 [Thread: http-nio-2020-exec-7][ Class:com.vingsoft.fileManage.core.FileManage >> Method: com.vingsoft.fileManage.core.FileManage.uploadFileToFileManage(FileManage.java:89) ]
+INFO:文件呢路径：Snipaste_2020-07-16_16-41-30.png
+2020-07-20 17:32:11 下午 [Thread: Thread-31][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-07-20 17:32:11 下午 [Thread: Thread-31][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-07-20 17:32:11 下午 [Thread: Thread-31][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-07-20 17:32:11 下午 [Thread: Thread-31][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-07-20 17:32:12 下午 [Thread: Thread-31][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+INFO:{dataSource-1} closed

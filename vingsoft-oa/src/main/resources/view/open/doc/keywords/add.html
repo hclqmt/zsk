@@ -1,0 +1,43 @@
+<!--# layout("/common/_container.html"){ -->
+
+<div style="background-color: white;padding: 5px;">
+	<fieldset class="layui-elem-field layui-field-title" >
+		<legend>请填写</legend>
+	</fieldset>
+
+	<form class="layui-form" action="${ctxPath}/doc/keywords/add" method="post">
+		<input type="hidden" id="id" name="id">
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">名称</label>
+				<div class="layui-input-inline">
+					<input type="text" id="name" name="name" lay-verify="required"
+						autocomplete="off" placeholder="名称" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label  layui-required">排序</label>
+				<div class="layui-input-inline">
+					<input type="number" id="sort" name="sort" lay-verify="IsIntegerPositive"
+						   autocomplete="off" placeholder="排序" class="layui-input">
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="save-btn">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<style>
+html{
+	background-color: white;
+}
+</style>
+<script src="${ctxPath}/open/keywords/info.js"></script>
+
+<!--# } -->

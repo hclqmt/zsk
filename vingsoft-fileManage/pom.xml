@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.vingsoft</groupId>
+		<artifactId>vingsoft-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.vingsoft.fileManage</groupId>
+	<artifactId>vingsoft-fileManage</artifactId>
+	<name>文件管理模块</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<fileClient.version>1.0</fileClient.version>
+	</properties>
+	<dependencies>
+		<!-- 引入核心模块 -->
+		<dependency>
+			<groupId>com.vingsoft.core</groupId>
+			<artifactId>vingsoft-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- 文件服务器 -->
+		<dependency>
+			<groupId>vingsoft</groupId>
+			<artifactId>vicFileClient</artifactId>
+			<version>${fileClient.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>3.8.0</version>
+		</dependency>
+<!--		图片压缩-->
+		<dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.8</version>
+		</dependency>
+
+	</dependencies>
+</project>

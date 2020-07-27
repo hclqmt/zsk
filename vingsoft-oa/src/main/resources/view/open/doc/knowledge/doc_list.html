@@ -1,0 +1,93 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+<head lang="en">
+	<meta name="viewport" content="width=device-width" />
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body style="background:#f5f5f5;overflow-y:scroll" >
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 d-none d-md-block list_left_md">
+			<div class="accordion" id="accordion1">
+				<h3 class="big_title">知识分类</h3>
+				<!--# for(knowledgeClassifyRoot in knowledgeClassifyRootList){ -->
+				<!--# if(knowledgeClassifyRoot.childrenClassify==null){ -->
+					<p class="text_lv1  d-none d-lg-block ">
+					<span onclick="toList('${knowledgeClassifyRoot.classifyName}','',
+					'${knowledgeClassifyRoot.classifyName}')">${knowledgeClassifyRoot.classifyName}</span>
+					<small class="text-danger bg-white ml-1">>${knowledgeClassifyRoot.count==0?'':knowledgeClassifyRoot.count}</small></p>
+					<!--# }else{ -->
+						<p class="text_lv1  d-none d-lg-block ">
+						<span onclick="toList('${knowledgeClassifyRoot.classifyName}','',
+						'${knowledgeClassifyRoot.classifyName}')">${knowledgeClassifyRoot.classifyName}</span>
+						<small class="text-danger bg-white ml-1">${knowledgeClassifyRoot.count==0?'':knowledgeClassifyRoot.count}</small></p>
+						<!--# for(secondKnowledgeClassify in knowledgeClassifyRoot.childrenClassify){ -->
+						<!--# if(secondKnowledgeClassify.childrenClassify==null){ -->
+							<div class="card">
+								<div class="card-header" id="headingFour">
+									<h2 class="mb-0">
+										<button onclick="toList('${secondKnowledgeClassify.location}','${secondKnowledgeClassify.uuid}','${secondKnowledgeClassify.classifyName}')"
+												class="btn btn-link btn-block text-left collapsed" type="button">
+											<span>${secondKnowledgeClassify.classifyName}</span>
+											<small class="text-danger bg-white ml-1">${secondKnowledgeClassify.count==0?'':secondKnowledgeClassify.count}</small>
+										</button>
+									</h2>
+								</div>
+							</div>
+						<!--# }else{ -->
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h2 class="mb-0">
+										<button onclick="toList('${secondKnowledgeClassify.location}','${secondKnowledgeClassify.uuid}','${secondKnowledgeClassify.classifyName}')"
+												class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+												data-target="#${secondKnowledgeClassify.classifyName}" aria-expanded="true" aria-controls="${secondKnowledgeClassify.classifyName}">
+											${secondKnowledgeClassify.classifyName}
+											<small class="text-danger bg-white ml-1">${secondKnowledgeClassify.count==0?'':secondKnowledgeClassify.count}</small>
+										</button>
+									</h2>
+								</div>
+
+								<div id="${secondKnowledgeClassify.classifyName}" class="collapse" aria-labelledby="headingOne"
+									 data-parent="#accordion1">
+									<div class="card-body">
+										<ul class="list-group list-group-flush">
+											<!--# for(thirdlyKnowledgeClassify in secondKnowledgeClassify.childrenClassify){ -->
+												<li onclick="toList('${thirdlyKnowledgeClassify.location}','${thirdlyKnowledgeClassify.uuid}','${thirdlyKnowledgeClassify.classifyName}')"
+														class="list-group-item">${thirdlyKnowledgeClassify.classifyName}<small class="ml-1 text-danger">${thirdlyKnowledgeClassify.count}</small></li>
+											<!--# } -->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!--# } -->
+						<!--# } -->
+				<!--# } -->
+				<!--# } -->
+			</div>
+		</div>
+
+		<!-- 主体内容 -->
+		<div class="col-md-9 col-12" style="height: 800px;width: 800px;">
+			<h3 id="title" class="big_title">当前分类：/酒泉市政务服务运行中心</h3>
+			<iframe style="margin-top: 55px;" id="iframe" src="${ctxPath}/openIndex/list?page=1&limit=10&isReleaseGroup=0" frameborder="0"class="layadmin-iframe">
+			</iframe>
+		</div>
+	</div>
+</div>
+
+</body>
+<script>
+
+
+	function toList(location,docClassify,classifyName) {
+		$("#title").text("当前分类：/"+location);
+		$("#docClassify").val(docClassify);
+		$("#iframe").attr('src','${ctxPath}/openIndex/list?page=1&limit=10&isReleaseGroup=0&docClassify='+docClassify)
+	}
+</script>
+
+</html>
+<!--# } -->

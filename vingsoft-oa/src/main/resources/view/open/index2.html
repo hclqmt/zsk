@@ -1,0 +1,110 @@
+<!--# layout("/common/_container.html"){ -->
+
+<div id="LAY_app">
+
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary ">
+			<a class="navbar-brand" onclick="change('${ctxPath}/openIndex/main')">政务知识库</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent" >
+				<ul class="navbar-nav mr-auto">
+					<li >
+						<span class="nav-link" onclick="change('${ctxPath}/openIndex/main')" ><img src="${ctxPath}/images/head_1.png" alt=""><span>首页</span>  <span class="sr-only">(current)</span></span>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="nav" onclick="change('${ctxPath}/doc/knowledge/getKnowledgeClassify?type=1')"><img src="${ctxPath}/images/head_2.png" alt=""><span>知识</span></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" onclick="change('${ctxPath}/doc/sysUser/sysUserInfo')" href="javascript:void(0);" tabindex="-1" aria-disabled="true"><img src="${ctxPath}/images/head_9.png" alt=""><span>消息</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="${ctxPath}/images/head_4.png" alt=""><span>工具</span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="javascript:void(0);">通讯录</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<!--# if(loginUser==null){ -->
+						<a class="nav-link" href="javascript:void(0);" onclick="change('${ctxPath}/login')"
+						   tabindex="-1" aria-disabled="true"><img src="${ctxPath}/images/head_5.png" alt=""><span>登录/注册</span></a>
+						<!--# }else{ -->
+						<a class="nav-link" href="javascript:void(0);" onclick="change('${ctxPath}/doc/sysUser/sysUserInfo')" tabindex="-1"
+						   aria-disabled="true"><img src="${ctxPath}/images/head_5.png" alt=""><span id="usr">${loginUser.username}</span>:欢迎您!</a>
+						<li class="nav-item">
+							<a class="nav-link" href="${ctxPath}/logout" tabindex="-1"
+							   aria-disabled="true"><img src="${ctxPath}/images/head_9.png" alt=""><span>登出</span></a>
+						</li>
+						<!--# } -->
+
+					</li>
+				</ul>
+				<ul class="navbar-nav my-2 my-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							创建知识
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+							<a class="dropdown-item" onclick="change('${ctxPath}/doc/knowledge/addInfo')">创建文档知识</a>
+							<a class="dropdown-item" onclick="change('${ctxPath}/doc/knowledge/downloadFile?docType=1&page=1&limit=6')">下载资源知识</a>
+							<a class="dropdown-item" onclick="change('${ctxPath}/doc/knowledge/toUploadWordResource')">word创建知识</a>
+							<a class="dropdown-item" onclick="change('${ctxPath}/doc/knowledge/addInfoResource')">上传文件知识</a>
+						</div>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" id="keyWords" type="text" placeholder="输入关键词" aria-label="Search">
+					<img src="${ctxPath}/images/head_3.png" id="search" alt="" class="nav_search_btn">
+				</form>
+			</div>
+		</nav>
+
+		<!-- 主体内容 -->
+		<div class="layadmin-tabsbody-item layui-show">
+			<input type="hidden" value="${prevUrl}" id="prevUrls">
+			<iframe id="iframe" src="" frameborder="0"class="layadmin-iframe">
+			</iframe>
+		</div>
+
+
+
+	<footer>
+		<p>政务服务运行平台知识库</p>
+	</footer>
+</div>
+<script type="text/javascript">
+
+	function change(src) {
+		$("#iframe").attr('src',src);
+	}
+	//记录上次地址 直接进行访问
+	$(function () {
+		console.log($("#usr").text())
+		const prevUrls = $("#prevUrls").val();
+		const prevUrl = '${ctxPath}'+prevUrls;
+		const mainUrl = '${ctxPath}/openIndex/main';
+		if(prevUrls != ''&&prevUrls != undefined){
+			$("#iframe").attr('src',prevUrl);
+		}else{
+			$("#iframe").attr('src',mainUrl);
+		}
+	})
+
+	$("#search").click(function () {
+		var keywords = $("#keyWords").val();
+		if(keywords==undefined||keywords==''){
+			layer.msg("请输入关键字")
+			return false;
+		}
+		var src='${ctxPath}/doc/sysUser/open/searchByLucene?page=1&limit=10&keyWords='+keywords;
+		$("#iframe").attr('src',src);
+	})
+</script>
+
+<!--# } -->
+

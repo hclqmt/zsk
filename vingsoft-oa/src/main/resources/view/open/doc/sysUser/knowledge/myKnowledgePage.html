@@ -1,0 +1,7 @@
+
+    <tr><th>标题</th><th>创建日期</th><th>访问/热度/留言</th></tr>
+    <!--# for(docKnowledge in docKnowledgeList.data){ -->
+    <tr><td><a href="javascript:void(0)"
+               onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}')">${docKnowledge.knowledgeName}</a></td><td>${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}</td>
+        <td>${docKnowledge.readCount=='0'?'0':docKnowledge.readCount}/4/${docKnowledge.praiseNum=='0'?'0':docKnowledge.praiseNum}</td></tr>
+    <!--# } -->

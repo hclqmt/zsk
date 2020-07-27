@@ -1,0 +1,74 @@
+<!--# layout("/common/_container.html"){ -->
+
+<div class="layui-fluid layui-col-space15">
+	<div class="layui-col-md3">
+		<div class="layui-card">
+			<div class="layui-card-header">分类目录</div>
+			<div class="layui-card-body">
+				<!-- dtree树容器 -->
+				<ul id="slTree" class="dtree" data-id="0" style="width: 100%;"></ul>
+			</div>
+		</div>
+	</div>
+	<div class="layui-col-md9"> 
+	    <div class="layui-card">
+	    	<div class="layui-card-header">分类管理</div>
+	      	<div class="layui-form layui-card-header layuiadmin-card-header-auto">
+	        	<div class="layui-form-item">
+	        		<form class="layui-form">
+		        		<div class="layui-inline search-field2">
+		        			<label class="layui-form-label">分类名称：</label>
+							<div class="layui-input-block">
+								<input class="layui-input" placeholder="请输入名称" name="classifyName" id="classifyName"
+									autocomplete="off">
+							</div>
+		        		</div>
+		        		<div class="layui-inline search-field2">
+							<label class="layui-form-label">状态：</label>
+							<div class="layui-input-block">
+								<!-- 使用字典下拉选择项 -->
+						      	<layui:dictOpt typeCode="enable" name="status" />
+							</div>
+						</div>
+
+		        		<div class="layui-inline search-btn">
+							<button class="layui-btn" id="btn-search" data-type="reload" type="button">搜索</button>
+							<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="layui-card-body">
+				<table class="layui-hide" id="layTable" lay-filter="layTable"></table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	var dtree = new $DTree('/doc/classify/getClassifyTree');
+	dtree.setCheckbar(false);
+	dtree.setIcon("2");
+	dtree.setElem("slTree");
+	dtree.initLeftTree();
+});
+
+</script>
+
+<script type="text/html" id="table-checkboxTpl">
+	<!-- 是否启用 -->
+    <input type="checkbox" name="status" title="启用" lay-filter="ifEnable"
+    value="{{d.id}}" data-json="{{ encodeURIComponent(JSON.stringify(d)) }}" {{ d.status == 1 ? 'checked' : '' }}>
+</script>
+
+<script type="text/html" id="toolbar">
+	<div class="layui-btn-group">
+    	<button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="add" title="新增"><i class="layui-icon layui-icon-add-1"></i></button>
+    	<button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="edit" title="编辑"><i class="layui-icon layui-icon-edit"></i></button>
+    	<button class="layui-btn layui-btn-primary layui-btn-sm" lay-event="delete" title="删除"><i class="layui-icon layui-icon-delete"></i></button>
+  	</div>
+</script>
+
+<script src="${ctxPath}/open/classify/manage.js"></script>
+<!--# } -->

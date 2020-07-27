@@ -1,0 +1,111 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+</head>
+<body  >
+
+
+    <div class="card mb-2" id="container">
+        <div class="card-body pt-0 pb-0">
+            <input type="hidden" value="${docKnowledgeList.count}" id="count">
+            <input type="hidden" id="docClassify" value="${docClassify}">
+            <input type="hidden" id="userId" value="${userId}">
+            <ul class="list-unstyled mb-0">
+                <!--# for(docKnowledge in docKnowledgeList.data){ -->
+                <li class="media pt-3 pb-3 border-bottom">
+                    <img onerror="this.src='${ctxPath}/images/no-photo.png'"
+                         src="${docKnowledge.docPicUrl}" style="width: 130px;height: 130px" class="mr-3 ml-3 align-self-center" alt="...">
+                    <div class="media-body">
+                        <a href="javascript:;" onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}','${docKnowledge.readPermissions}','${docKnowledge.createById}')"><h5 class="mt-0 mb-3 pb-3 border-bottom">
+                            <img src="${ctxPath}/images/index_2.png" class="align-middle">${docKnowledge.knowledgeName}</span></h5></a>
+                        <p class="text-secondary mb-0"><span
+                                class="text-white bg-primary rounded p-1 mr-1">${docKnowledge.classifyName}</span>&nbsp;<strong>${docKnowledge.readCount=='0'?'0':docKnowledge.readCount}</strong>人阅读&nbsp;<strong>${docKnowledge.praiseNum=='0'?'0':docKnowledge.praiseNum}</strong>人评论&nbsp;</p>
+                        ${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}
+
+                    </div>
+                </li>
+                <!--# } -->
+            </ul>
+        </div>
+    </div>
+    <div id="test1"></div>
+<!--    <table class="layui-table">-->
+<!--        <colgroup>-->
+<!--            <col width="30%">-->
+<!--            <col width="70%">-->
+<!--        </colgroup>-->
+<!--        <tbody>-->
+<!--        <tr>-->
+<!--            <th>分类名称</th>-->
+<!--            <td>常用电话</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>分类阅读权限</th>-->
+<!--            <td>所有人</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>分类编辑权限</th>-->
+<!--            <td>所有人</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <th>分类审核权限</th>-->
+<!--            <td>所有人</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+</body>
+<script>
+    const count =$("#count").val();
+    const docClassify =$("#docClassify").val();
+    var userId =$("#userId").val();
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: count //数据总数，从服务端得到
+            ,layout: ['prev', 'page', 'next','skip']
+            ,jump: function(obj, first){
+                if(first){
+                    return;
+                }
+                $.ajax({
+                    url:'${ctxPath}/openIndex/pageIndex?page='+obj.curr+"&limit="+obj.limit+"&docClassify="+docClassify,
+                    type:'get',
+                    dataType:'html',
+                    success:function(res){
+                        $("#container").html('');
+                        $("#container").html(res);
+                    },
+                    error: function (res) {
+                        console.log(res)
+                    }
+                })
+
+            }
+        });
+    });
+
+    function showInfo(uuid,docClassify,docType,readPermissions,createById) {
+        if (readPermissions=='1'){
+            parent.location="${ctxPath}/doc/knowledge/showInfo?uuid="+uuid+"&docClassify="+docClassify+"&docType="+docType;
+        }else if(userId=='-1'){
+            layer.msg("前先登录",{icon: 2,time:1000, shade:0.4})
+            return false;
+        }else if(readPermissions == '0'){
+            if(userId===createById){
+                parent.location="${ctxPath}/doc/knowledge/showInfo?uuid="+uuid+"&docClassify="+docClassify+"&docType="+docType;
+            }else{
+                layer.msg("权限不足",{icon: 2,time:1000, shade:0.4})
+            }
+        }
+    }
+</script>
+
+</html>
+<!--# } -->

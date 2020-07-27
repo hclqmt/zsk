@@ -1,0 +1,21 @@
+
+<div class="card-body pt-0 pb-0">
+    <input type="hidden" value="${docKnowledgeList.count}" id="count">
+    <input type="hidden" id="docClassify" value="${docClassify}">
+    <ul class="list-unstyled mb-0">
+        <!--# for(docKnowledge in docKnowledgeList.data){ -->
+        <li class="media pt-3 pb-3 border-bottom">
+            <img onerror="this.src='${ctxPath}/images/no-photo.png'"
+                 src="${docKnowledge.docPicUrl}" style="width: 130px;height: 130px" class="mr-3 ml-3 align-self-center" alt="...">
+            <div class="media-body">
+                <a href="javascript:;" onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}','${docKnowledge.readPermissions}','${docKnowledge.createById}')"><h5 class="mt-0 mb-3 pb-3 border-bottom">
+                    <img src="${ctxPath}/images/index_2.png" class="align-middle">${docKnowledge.knowledgeName}</span></h5></a>
+                <p class="text-secondary mb-0"><span
+                        class="text-white bg-primary rounded p-1 mr-1">${docKnowledge.classifyName}</span>&nbsp;<strong>${docKnowledge.readCount=='0'?'0':docKnowledge.readCount}</strong>人阅读&nbsp;<strong>${docKnowledge.praiseNum=='0'?'0':docKnowledge.praiseNum}</strong>人评论&nbsp;</p>
+                ${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}
+
+            </div>
+        </li>
+        <!--# } -->
+    </ul>
+</div>

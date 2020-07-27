@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-common/vingsoft-common.iml" filepath="$PROJECT_DIR$/vingsoft-common/vingsoft-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-core/vingsoft-core.iml" filepath="$PROJECT_DIR$/vingsoft-core/vingsoft-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-fileManage/vingsoft-fileManage.iml" filepath="$PROJECT_DIR$/vingsoft-fileManage/vingsoft-fileManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-oa/vingsoft-oa.iml" filepath="$PROJECT_DIR$/vingsoft-oa/vingsoft-oa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-parent.iml" filepath="$PROJECT_DIR$/vingsoft-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vingsoft-ueditor/vingsoft-ueditor.iml" filepath="$PROJECT_DIR$/vingsoft-ueditor/vingsoft-ueditor.iml" />
+    </modules>
+  </component>
+</project>

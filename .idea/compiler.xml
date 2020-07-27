@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vingsoft-ueditor" />
+        <module name="vingsoft-common" />
+        <module name="vingsoft-oa" />
+        <module name="vingsoft-core" />
+        <module name="vingsoft-fileManage" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="vingsoft-common" target="1.8" />
+      <module name="vingsoft-core" target="1.8" />
+      <module name="vingsoft-fileManage" target="1.8" />
+      <module name="vingsoft-oa" target="1.8" />
+      <module name="vingsoft-parent" target="1.8" />
+      <module name="vingsoft-ueditor" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

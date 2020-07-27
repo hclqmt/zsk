@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vingsoft-oa:war">
+    <output-path>$PROJECT_DIR$/vingsoft-oa/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vingsoft-oa</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="oa.war">
+      <element id="artifact" artifact-name="vingsoft-oa:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,348 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", 微软雅黑, Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff; 
+  overflow-y: hidden;
+  }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  vertical-align: middle; }
+
+a {
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: none; }
+
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+.ft-red {
+  color: #f80000; }
+
+.clearfix {
+  clear: both; }
+
+.topbar {
+  width: 100%;
+  height: 60px; }
+
+.logobar {
+  position: absolute;
+  left: 20px;
+  top: 12px; }
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background: url(../images/logo.png) top center no-repeat;
+  float: left; }
+
+.top-title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 12px; }
+
+.grey-font {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0 10px;
+  font-weight: 100; }
+
+.topbg {
+  background: transparent url(/images/top-bg.png) repeat-x left top;
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  height: 20px;
+  width: 100%;
+  margin: 0px; }
+
+.system-title {
+  color: #fff;
+  font-size: 18px; }
+
+.top-nav {
+  position: absolute;
+  right: 20px;
+  top: 12px; }
+
+.nav-menu {
+  display: inline-block;
+  margin-right: 4px; }
+  .nav-menu a {
+    color: #f5f5f5;
+    padding: 8px 12px;
+    border: 1px solid transparent; }
+  .nav-menu a:hover {
+    color: #fff;
+    padding: 8px 12px;
+    border: 1px solid #f5f5f5;
+    border-radius: 3px; }
+  .nav-menu .icon-font {
+    position: relative;
+    top: 3px; }
+
+.nav-text {
+  display: inline-block; }
+
+.icon-refresh,
+.icon-home,
+.icon-user,
+.icon-downward,
+.icon-yxjc,
+.icon-jcgz,
+.icon-tjfx,
+.icon-txcl,
+.icon-ssgl,
+.icon-sdfp,
+.icon-tscl {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-image: url(/images/icon-sprit.png);
+  background-repeat: no-repeat; }
+
+.icon-refresh,
+.icon-home,
+.icon-user,
+.icon-downward {
+  position: relative;
+  top: 6px; }
+
+.icon-refresh {
+  background-position: -24px -48px; }
+
+.icon-home {
+  background-position: 0px -48px; }
+
+.icon-user {
+  background-position: -48px -48px; }
+
+.icon-downward {
+  background-position: -72px -48px; }
+
+.icon-yxjc,
+.icon-jcgz,
+.icon-tjfx,
+.icon-txcl,
+.icon-ssgl,
+.icon-sdfp,
+.icon-tscl {
+  position: relative;
+  top: 12px;
+  left: 8px; }
+
+.icon-yxjc {
+  background-position: 0px 0px; }
+
+.icon-jcgz {
+  background-position: -24px 0px; }
+
+.icon-sdfp {
+  background-position: -48px 0px; }
+
+.icon-ssgl {
+  background-position: -72px 0px; }
+
+.icon-tjfx {
+  background-position: -96px 0px; }
+
+.icon-tscl {
+  background-position: -120px 0px; }
+
+.left-menu-line {
+  height: 48px;
+  line-height: 48px;
+  display: block;
+  border-bottom: 1px solid #ececec; }
+
+.menu-text {
+  font-size: 14px; }
+
+@font-face {
+  font-family: iconfont;
+  src: url(../fonts/iconfont-1/iconfont.eot);
+  src: url(../fonts/iconfont-1/iconfont.eot#iefix) format("embedded-opentype"), url(../fonts/iconfont-1/iconfont.svg#iconfont) format("svg"), url(../fonts/iconfont-1/iconfont.woff) format("woff"), url(../fonts/iconfont-1/iconfont.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+.icon-font {
+  font-family: iconfont !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-bumen:before {
+  content: "\e605"; }
+
+.icon-chakan:before {
+  content: "\f01f0"; }
+
+.icon-wxbdingwei:before {
+  content: "\e624"; }
+
+.icon-bixutian:before {
+  content: "\e652"; }
+
+.icon-jia-xianxingyuankuang:before {
+  content: "\e8df"; }
+
+.icon-jian-xianxingyuankuang:before {
+  content: "\e8e6"; }
+
+.icon-bangzhu:before {
+  content: "\e63b"; }
+
+.icon-bianji:before {
+  content: "\e63c"; }
+
+.icon-shanchu:before {
+  content: "\e623"; }
+
+.icon-dzjc-menu-jcgz:before {
+  content: "\e61d"; }
+
+.icon-dzjc-menu-dashboard:before {
+  content: "\e61e"; }
+
+.icon-dzjc-menu-tscl:before {
+  content: "\e61f"; }
+
+.icon-dzjc-menu-sdfp:before {
+  content: "\e620"; }
+
+.icon-dzjc-menu-ssgl:before {
+  content: "\e621"; }
+
+.icon-tools-arrow-down:before {
+  content: "\e622"; }
+
+.icon-dzjc-menu-tjfx:before {
+  content: "\e625"; }
+
+.icon-tools-arrow-left:before {
+  content: "\e626"; }
+
+.icon-tools-arrow-right:before {
+  content: "\e627"; }
+
+.icon-tools-exit:before {
+  content: "\e628"; }
+
+.icon-tools-arrow-up:before {
+  content: "\e629"; }
+
+.icon-dzjc-menu-yxjc:before {
+  content: "\e62a"; }
+
+.icon-tools-home:before {
+  content: "\e62b"; }
+
+.icon-tools-refresh:before {
+  content: "\e62c"; }
+
+.icon-tools-user:before {
+  content: "\e62d"; }
+
+.icon-tools-search:before {
+  content: "\e62e"; }
+
+.icon-tools-arrow-up1:before {
+  content: "\e62f"; }
+
+.icon-tools-arrow-down1:before {
+  content: "\e630"; }
+
+.icon-tools-arrow-match:before {
+  content: "\e631"; }
+
+.icon-tools-state:before {
+  content: "\e632"; }
+
+.icon-tools-auto:before {
+  content: "\e633"; }
+
+
+
+
+

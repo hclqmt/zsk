@@ -1,0 +1,35 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+
+<head lang="en">
+	<meta name="viewport" content="width=device-width" />
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+	<div class="container">
+        <h2 class="file_bigtitle mt-4 mb-3"><img src="img/ppt.png" style="height: 2.5rem;" class="mr-2 align-text-bottom" alt=""> ${picResource.docOriginalName}</h2>
+        <table class="layui-table">
+            <colgroup><col width="30%"><col width="70%"></colgroup>
+            <tbody>
+                <tr><th>文件大小</th><td>${picResource.size}</td></tr>
+                <tr><th>创建时间</th><td>${picResource.createDate,"yyyy-MM-dd HH:mm:ss"}</td></tr>
+                <tr><th>创建人</th><td>${picResource.createBy}</td></tr>
+                <tr><th>扩展名</th><td>.${picResource.extensionName}</td></tr>
+                <tr><th>uniqueCode</th><td>${picResource.uniqueCode}</td></tr>
+            </tbody>
+        </table>
+        <div class="text-right mt-4">
+            <a href="javascript:history.go(-1)" type="button" class="btn btn-secondary">返回知识</a>
+            <button type="button" onclick="window.location='${picResource.resourceUrl}'" class="btn btn-primary">下载</button>
+        </div>
+	</div>
+
+
+</body>
+<script>
+</script>
+
+</html>
+<!--# } -->

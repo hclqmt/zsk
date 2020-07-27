@@ -1,0 +1,192 @@
+<html>
+<!--# layout("/common/_container.html"){ -->
+<head lang="en">
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<div class="container">
+    <h3 class="big_title">创建word知识</h3>
+    <input type="hidden" id="parentUuid" value="${docKnowledge.docPicUrlIds}">
+    <input type="hidden" id="uuid" value="${docKnowledge.uuid}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">已上传文件</label>
+        <div class="layui-input-block">
+            <table class="layui-hide" id="test" lay-filter="test"></table>
+        </div>
+        <label class="layui-form-label">word文件</label>
+        <div class="layui-input-block">
+            <div class="layui-upload">
+                <div class="layui-upload-list">
+                    <table class="layui-table">
+                        <thead>
+                        <tr><th>文件名</th>
+                            <th>大小</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr></thead>
+                        <tbody id="demoList" lay-verify="demoList" ></tbody>
+                    </table>
+                </div>
+                <button class="btn btn-primary btn-block" id="testList">选择word文档并创建超文本知识(请选择doc文件)</button>
+            </div>
+        </div>
+
+    </div>
+    <!--    <div class="card mb-4">-->
+    <!--        <div class="card-body">-->
+    <!--            选择word文档并创建超文本知识(请选择doc文件)-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <button class="btn btn-primary btn-block">选择word文档并创建超文本知识(请选择doc文件)</button>-->
+</div>
+
+</body>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    var parentUuid = $("#parentUuid").val();//资源附件父id
+    var uuid = $("#uuid").val();
+    layui.use(['layer','upload','table'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var upload = layui.upload;
+        var table = layui.table;
+        var PicResourceArr =[];
+        var demoListView = $('#demoList')
+            ,uploadListIns = upload.render({
+            elem: '#testList'
+            ,url: '${ctxPath}/doc/knowledge/file'
+            ,data: {"versions":new Date().getTime(),"parentUuid":parentUuid,"uuid":uuid}
+            ,accept: 'file'
+            ,multiple: true
+            ,auto: true
+            ,size: 10240
+            ,acceptMime: '.doc,.docx'
+            ,exts: 'doc|docx'
+            ,bindAction: '#testListAction'
+            ,choose: function(obj){
+                var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                //读取本地文件
+                obj.preview(function(index, file, result){
+                    var tr = $(['<tr id="upload-'+ index +'">'
+                        ,'<td>'+ file.name +'</td>'
+                        ,'<td>'+ (file.size/1024).toFixed(1) +'kb</td>'
+                        ,'<td>等待上传</td>'
+                        ,'<td>'
+                        ,'<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                        ,'<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                        ,'</td>'
+                        ,'</tr>'].join(''));
+
+                    //单个重传
+                    tr.find('.demo-reload').on('click', function(){
+                        obj.upload(index, file);
+                    });
+
+                    //删除
+                    tr.find('.demo-delete').on('click', function(){
+                        delete files[index]; //删除对应的文件
+                        tr.remove();
+                        uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                    });
+
+                    demoListView.append(tr);
+                });
+            }
+            ,done: function(res, index, upload){
+                if(res.code==200){ //上传成功
+                    layer.msg(res.msg, {icon: 1});
+                    var PicResource ={};
+                    PicResource.docOriginalName=res.fileName;
+                    PicResource.extensionName=res.fileExtensionName;
+                    PicResource.resourceUrl=res.fileUrl;
+                    PicResource.uniqueCode=res.uniqueCode;
+                    PicResource.size=res.size;
+                    PicResourceArr.push(PicResource);
+                    console.log(PicResource);
+                    console.log(PicResourceArr);
+                    var tr = demoListView.find('tr#upload-'+ index)
+                        ,tds = tr.children();
+                    tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                    tds.eq(3).html(''); //清空操作
+                    return delete this.files[index]; //删除文件队列已经上传成功的文件
+                }
+                this.error(res,index, upload);
+            }
+            ,error: function(res,index, upload){
+                layer.msg(res.msg, {icon: 2});
+                var tr = demoListView.find('tr#upload-'+ index)
+                    ,tds = tr.children();
+                tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+                tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+            }
+        });
+
+        var instance = table.render({
+            elem: '#test'
+            ,url:'${ctxPath}/doc/knowledge/picResourceList?parentUuid=${docKnowledge.docPicUrlIds}'
+            ,title: '已传文件表'
+            ,cols: [[
+                {title : 'uui',field : 'uuid',align : 'center',unresize : true,sort : true,hide : true},
+                {field:'docOriginalName', title:'文件名', edit: 'text'}
+                ,{field:'size', title:'大小', width:100}
+                ,{field:'createDate', title:'时间',width:200,templet : "<div>{{layui.util.toDateString(d.createDate, 'yyyy-MM-dd HH:mm:ss')}}</div>"}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+            ]]
+            ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                //,curr: 5 //设定初始在第 5 页
+                ,groups: 1 //只显示 1 个连续页码
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+
+            }
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除已上传文件吗', function(index){
+                    obj.del();
+                    deletes(data.uuid);
+                    layer.close(index);
+                });
+            }
+        });
+        /**
+         * 删除菜单
+         */
+        function deletes(id) {
+
+            $.ajax({
+                type: "delete",
+                url: "${ctxPath}/doc/knowledge/delete",
+                dataType: "json",
+                data: JSON.stringify(id),
+                /*data:{"id":id},*/
+                cache: false,
+                async: false,
+                timeout: 60000,
+                success: function (result) {
+                    if (result.state == 1) {
+                        Feng.success(result.msg);
+                        instance.reload();
+                    } else {
+                        Feng.error(result.msg);
+                    }
+                },
+                error: function (err) {
+                    Feng.error("系统繁忙，请稍后重试！");
+                }
+            });
+        }
+
+    });
+</script>
+</html>
+<!--# } -->

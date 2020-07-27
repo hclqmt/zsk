@@ -1,0 +1,7 @@
+
+<tr><th>消息时间</th><th>消息主题</th><th>阅读状态</th></tr>
+<!--# for(myInfo in myInfoList){ -->
+<tr><td><a href="javascript:void(0)"
+           onclick="showInfo('${myInfo.id}','${myInfo.type}')">${myInfo.title}</a></td><td>${myInfo.createDate,"yyyy-MM-dd HH:mm:ss"}</td>
+    <td>${myInfo.status=='0'?'已阅读':'未阅读'}</td></tr>
+<!--# } -->

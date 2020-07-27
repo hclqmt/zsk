@@ -1,0 +1,8 @@
+
+<tr><th>评论内容</th><th>知识</th><th>评论日期</th><th>踩/赞</th></tr>
+<!--# for(myPraise in myPraiseList){ -->
+<tr><td><a href="javascript:void(0)"  onclick="showInfoPraise('${myPraise.knowledgeUuid}','${myPraise.docClassify}')">${myPraise.content}</a></td>
+    <td><a href="javascript:void(0)" onclick="showInfoKnowledge('${myPraise.knowledgeUuid}','${myPraise.docClassify}','${myPraise.docType}')">${myPraise.knowledgeName}</a></td>
+    <td>${myPraise.createDate,"yyyy-MM-dd HH:mm:ss"}</td><td>${myPraise.praiseNum}/${myPraise.oppositionNum}</td>
+</tr>
+<!--# } -->

@@ -1,0 +1,179 @@
+
+<html>
+<!--# layout("/common/_container.html"){ -->
+<head lang="en">
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<div class="container">
+    <input type="hidden" value="${count}" id="count">
+    <h4 class="sm_title d-flex justify-content-between">
+        下载知识
+    </h4>
+    <form class="layui-form" id="test">
+        <input type="hidden" value="1" name="page">
+        <input type="hidden" value="6" name="limit">
+        <input type="hidden" value="1" name="docType">
+        <div class="form-row">
+            <div class="form-group col-md-4 col-12">
+                <label>知识名称</label>
+                <input type="text" name="knowledgeName" value="${docKnowledge}" class="form-control" id="knowledgeName">
+            </div>
+            <div class="form-group col-md-6 col-12">
+                <label>发布时间</label>
+                <div class="input-daterange input-group">
+                    <input type="text"  value="${startCreateDate,'yyyy-MM-dd'}" name="startCreateDate" class="input-sm form-control form_YMD" size="16" id="datetimepicker-startYMD"/>
+                    <span class="input-group-addon">到</span>
+                    <input type="text" value="${endCreateDate,'yyyy-MM-dd'}" name="endCreateDate" class="input-sm form-control form_YMD"  size="16" id="datetimepicker-endYMD"/>
+                </div>
+            </div>
+            <div class="form-group col-md-2 col-12" style="text-align:center;line-height: 100px;">
+<!--            <div class="form-group col-md-2 col-12">-->
+                <label>&nbsp;</label>
+                <button  lay-filter="save-btn" lay-submit="" class="btn  btn-primary ">搜索</button>
+                <button  type="button" onclick="reset()" class="btn  btn-primary ">重置</button>
+            </div>
+        </div>
+    </form>
+<!--    <button  type="button" onclick="reset()" class="btn  btn-primary ">重置</button>-->
+
+    <h4 class="sm_title d-flex justify-content-between mt-3">
+        搜索结果
+    </h4>
+
+    <div class="row ssjg" id="typeList">
+        <!--# for(docKnowledge in docKnowledgeList){ -->
+        <div class="col-sm-6 col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${docKnowledge.knowledgeName}</h5>
+                    <div class="row list-item">
+                        <div class="col-sm-6 col-12">
+                            <p>类型：资源知识</p>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <p>创建时间：${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button onclick="download('${docKnowledge.docPicUrlIds}')" class="btn  btn-primary btn-sm">下载</button>
+                </div>
+            </div>
+        </div>
+        <!--# } -->
+    </div>
+    <div id="test1"></div>
+</div>
+
+</body>
+
+<script>
+    var count = $("#count").val();
+    var  knowledgeName = $("#knowledgeName").val();
+    var  startCreateDate = $("#datetimepicker-startYMD").val();
+    var  endCreateDate = $("#datetimepicker-endYMD").val();
+    $("#datetimepicker-startYMD").datetimepicker({
+        format: 'yyyy-mm-dd'
+        ,minView: 2
+        ,language: 'zh-CN'
+    });
+
+    $("#datetimepicker-endYMD").datetimepicker({
+        format: 'yyyy-mm-dd'
+        ,minView: 2
+        ,language: 'zh-CN'
+    });
+    function reset(){
+        $("#test").reset();
+        alert($("#knowledgeName").val())
+    }
+    $(function () {
+        flushPage(count);
+    })
+    function flushPage(page){
+        layui.use(['laypage','form'], function(){
+            var laypage = layui.laypage;
+            var form = layui.form;
+            const  knowledgeName = $("#knowledgeName").val();
+            const  startCreateDate = $("#datetimepicker-startYMD").val();
+            const  endCreateDate = $("#datetimepicker-endYMD").val();
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                ,count: page //数据总数，从服务端得到
+                ,limit: 6
+                ,layout: ['prev', 'page', 'next','skip']
+                ,jump: function(obj, first){
+                    console.log(obj);
+                    if(first){
+                        return;
+                    }
+                    $.ajax({
+                        url:'${ctxPath}/doc/knowledge/downloadFilePage?docType=1&page='+obj.curr+"&limit="+obj.limit+"&knowledgeName="+knowledgeName
+                            +"&startCreateDate="+startCreateDate+"&endCreateDate="+endCreateDate,
+                        type:'get',
+                        dataType:'html',
+                        success:function(res){
+                            $("#typeList").html('');
+                            $("#typeList").html(res);
+                        },
+                        error: function (res) {
+                        }
+                    })
+
+                }
+            });
+            form.on('submit(save-btn)', function(data){
+                $.get('${ctxPath}/doc/knowledge/downloadFilePage', data.field, function (res) {
+                    $("#count").val(8)
+                    $("#typeList").html('');
+                    $("#typeList").html(res);
+                    flushPage($("#searchCount").val())
+                }, 'html');
+                return false;
+            });
+        });
+    }
+
+
+    /**
+     * 下载多个附近
+     * @param parentUrl
+     */
+    function download(parentUrl) {
+        let triggerDelay=100;
+        let removeDelay=1000;
+        $.ajax({
+            url:'${ctxPath}/doc/knowledge/download?parentUuid='+parentUrl,
+            type:'get',
+            dataType:'json',
+            success:function(res){
+                if (res!=null&&res.length>0){
+                    res.forEach((item,index)=>{
+                        // console.log(e1.resourceUrl);
+                        createIframe(item.resourceUrl,index*triggerDelay,removeDelay);
+                    })
+                }
+            },
+            error: function (res) {
+            }
+        })
+    }
+    function createIframe(url,triggerDelay,removeDelay) {
+        setTimeout(function () {
+            var frame = $('<iframe style="display: none" class="multi-download"></iframe>')
+            frame.attr("src",url);
+            $(document.body).after(frame);
+            setTimeout(function () {
+                frame.remove();
+            },removeDelay);
+        },triggerDelay);
+    }
+
+</script>
+</html>
+<!--# } -->

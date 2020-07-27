@@ -1,0 +1,342 @@
+<!--# layout("/common/_container.html"){ -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+
+</head>
+<body>
+<div class="container">
+    <input type="hidden" id="userId" value="${userId}">
+    <input type="hidden" id="knowledgeUuid" value="${docKnowledge.uuid}">
+    <input type="hidden" id="badValue" value="${docKnowledge.badCount}">
+    <input type="hidden" id="goodValue" value="${docKnowledge.goodCount}">
+    <h2 class="file_bigtitle text-center mt-4 mb-3">${docKnowledge.knowledgeName}</h2>
+    <div class="mt-4 mb-4 text-center">
+        <div class="btn-group " role="group" aria-label="Basic example">
+            <!--# if(isAttention==0){ -->
+                <button type="button" id="attention" onclick="attentionMethod()" class="btn btn-outline-secondary btn-sm ">关注</button>
+            <!--# }else{ -->
+                <button type="button" id="attention"  onclick="attentionMethod()" class="btn-sm btn btn-success ">已关注</button>
+            <!--# } -->
+            <a href="${ctxPath}/doc/praise/praiseList?knowledgeUuid=${docKnowledge.uuid}&docClassify=${docKnowledge.docClassify}&page=1&limit=2" class="btn btn-outline-secondary btn-sm" >评论<span id="newPraiseCount"> ${praiseCount}</span></a>
+            <!--# if(isPraise==0){ -->
+            <button type="button" id="praise" onclick="praiseMethod()" class="btn btn-outline-secondary btn-sm">点赞<span title="${isPraise}" id="praiseNum">${docKnowledge.likes==0?"":docKnowledge.likes}</span></button>
+            <!--# }else{ -->
+            <button type="button" id="praise" onclick="praiseMethod()" class="btn btn-success btn-sm">点赞<span title="${isPraise}" id="praiseNum">${docKnowledge.likes==0?"":docKnowledge.likes}</span></button>
+            <!--# } -->
+            <!--# if(docKnowledge.editPermissions=='0'){ -->
+                <!--# if(docKnowledge.createById==userId){ -->
+                <button type="button" id="editKnowledge" onclick="editKnowledge('${docKnowledge.uuid}')" class="btn btn-outline-secondary btn-sm ">编辑</button>
+                <!--# } -->
+            <!--# }else{ -->
+                <button type="button" id="editKnowledge" onclick="editKnowledge(${docKnowledge.uuid})" class="btn btn-outline-secondary btn-sm ">编辑</button>
+            <!--# } -->
+        </div>
+    </div>
+    <div class="bd-callout bd-callout-danger" role="alert">
+        作者：<strong class="mr-1 ml-1">${docKnowledge.createBy}</strong>，于<strong class="mr-1 ml-1">${docKnowledge.createDate,"yyyy年MM月dd日"}</strong>发布在分类<strong
+            class="mr-1 ml-1">${locations}</strong>下，并于<strong class="mr-1 ml-1">${docKnowledge.updateDate,"yyyy年MM月dd日"}</strong>编辑
+    </div>
+
+    <div class="row">
+        <!--# for(picResource in picResourcesList) { -->
+        <div class="col-12 col-lg-6  mb-3">
+            <div class="card">
+                <div class="media pt-3 pb-3 border-bottom">
+                    <img  onerror="this.src='${ctxPath}/images/complaintinfo_add.png'"
+                         src="${ctxPath}/images/${picResource.extensionName}.png" class="mr-3 ml-3 align-self-center media_img" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-3 pb-3 border-bottom">
+                            <img src="${ctxPath}/images/index_2.png" onclick="window.location='${picResource.resourceUrl}'" class="mr-1 align-middle">
+                            <span class="align-middle">${picResource.docOriginalName}</span>
+                        </h5>
+                        <div class="btn-group " role="group" aria-label="Basic example">
+                            <a href="${ctxPath}/doc/knowledge/viewDetail?uuid=${picResource.uuid}" class="btn btn-outline-secondary btn-sm">查看详情</a>
+                            <button type="button" onclick="window.location='${picResource.resourceUrl}'" class="btn btn-outline-secondary btn-sm">下载(<span>${picResource.size}</span>)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#}-->
+    </div>
+
+    <div class="mt-4 mb-4 text-center">
+        <div class="btn-group " role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary btn-lg" onclick="goodOrBad('0')">好评</button>
+            <button type="button" class="btn btn-light btn-lg" id="goodOrBadCount" ><span>${docKnowledge.goodCount==0?'':docKnowledge.goodCount}</span></button>
+            <button type="button" class="btn btn-danger btn-lg" onclick="goodOrBad('1')">差评</button>
+        </div>
+    </div>
+
+    <div class="list_zstz card mt-3">
+        <div class="card-body">
+            <div class="mt-2 mb-3">
+                <h4 class="sm_title">标签</h4>
+                <div class="tips_box">
+                    <!--# for(label in docKnowledge.labelList) { -->
+                    <a href="#" class="btn btn-primary btn-sm">${label.name}</a>
+                    <!--#}-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h4 class="sm_title">同类知识</h4>
+                    <ul>
+                        <!--# for(docKnowledge in theSameDocKnowledgeList) { -->
+                            <li onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}')">
+                                ${docKnowledge.knowledgeName}
+                            </li>
+                        <!--#}-->
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h4 class="sm_title">推荐知识</h4>
+                    <ul>
+                        <!--# for(docKnowledge in theRecommendSDocKnowledgeList) { -->
+                        <li onclick="showInfo('${docKnowledge.uuid}','${docKnowledge.docClassify}','${docKnowledge.docType}')">
+                            ${docKnowledge.knowledgeName}
+                        </li>
+                        <!--#}-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card list_pinglun mt-3">
+        <!--# if(userId==-1){ -->
+        <button type="button" onclick="window.location='${ctxPath}/login'" class="btn btn-primary btn-lg btn-block">请先登录再发表评论</button>
+        <!--# }else{ -->
+        <div class="card-body">
+            <h4 class="sm_title">知识评论</h4>
+            <textarea name="praises" id="praises" class="form-control"></textarea>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <p class="text-secondary mb-0">当前评论数
+                    <a href="${ctxPath}/doc/praise/praiseList?knowledgeUuid=${docKnowledge.uuid}&docClassify=${docKnowledge.docClassify}&page=1&limit=2">
+                        <span class="text-primary" id="newPraises">${praiseCount}</span>
+                    </a>个</p>
+                <button class="btn btn-primary" onclick="writePraise()">发表评论</button>
+            </div>
+        </div>
+        <!--# } -->
+    </div>
+
+    <!-- 访问权限 -->
+    <div class="card list_pinglun mt-3">
+        <div class="card-body">
+            <h4 class="sm_title">访问权限</h4>
+            <div class="list_quanxian">
+                <table class="layui-table">
+                    <colgroup><col width="30%"><col width="70%"></colgroup>
+                    <tbody>
+                    <tr><th>创建人</th><td>${docKnowledge.createBy}</td></tr>
+                    <tr><th>知识阅读权限</th>
+                        <!--# if(docKnowledge.readPermissions=='0'){ -->
+                        <td>创建人</td>
+                        <!--# }else if(docKnowledge.readPermissions=='1'){ -->
+                        <td>所有人</td>
+                        <!--# }else{ -->
+                        <td>所有人</td>
+                        <!--# } -->
+                    </tr>
+                    <tr><th>知识编辑权限</th>
+                        <!--# if(docKnowledge.editPermissions=='0'){ -->
+                        <td>创建人</td>
+                        <!--# }else if(docKnowledge.editPermissions=='1'){ -->
+                        <td>所有人</td>
+                        <!--# }else{ -->
+                        <td>所有人</td>
+                        <!--# } -->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    const userId = $("#userId").val();
+    const knowledgeUuid = $("#knowledgeUuid").val();
+    const attention = $("#attention");
+    const praise = $("#praise");
+    const attentionClass = "btn btn-outline-secondary btn-sm";
+    const isAttentionClass = "btn btn-success btn-sm";
+    var flag = false;
+    function writePraise() {
+        const praiseContent = $("#praises").val();
+        if(praiseContent!=''&&praiseContent!=undefined){
+            if(praiseContent.length>50){
+                layer.msg("发表评论不能超过50字",{icon: 2,time: 1000});
+            }else{
+                $.post({
+                    url: '${ctxPath}/doc/praise/add',
+                    data: {"knowledgeUuid":knowledgeUuid,"userId":userId,"content":praiseContent},
+                    dataType: 'json',
+                    success: function (res) {
+                        if(res.code==200){
+                            var knowledgePraise = res.content;
+                            console.log(res)
+                            $("#newPraise").after('<div class="media mt-3">' +
+                                '<img src="${ctxPath}/images/header.png" class="mr-3" alt="">' +
+                                '<div class="media-body">' +
+                                '<h5 class="mt-0">'+knowledgePraise.nickname+'<small>'+knowledgePraise.createDate+'</small></h5>'+knowledgePraise.content+'' +
+                                '<div class="btn-group d-block mt-1 border-bottom mb-2 pb-3" role="group" aria-label="Basic example">' +
+                                '<button type="button" class="btn btn-outline-primary btn-sm " onclick="praiseOrOppo(\'0\',\''+knowledgePraise.id+'\')">赞成<span id=\"'+knowledgePraise.id+'praiseNums\"></span></button>' +
+                                '<button type="button" class="btn btn-outline-primary btn-sm" onclick="praiseOrOppo(\'1\',\''+knowledgePraise.id+'\')">反对<span id="'+knowledgePraise.id+'oppoNum"></span></button>'+
+                                '<button type="button" class="btn btn-outline-primary btn-sm" name=\"all\" onclick=\"reply(\''+knowledgePraise.id+'\',\''+knowledgePraise.userId+'\',\''+knowledgePraise.nickname+'\',this)\">回复</button>' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>' );
+                            var newPraises = parseInt($("#newPraises").text())+1;
+                            $("#newPraises").text(newPraises);
+                            $("#newPraiseCount").text(newPraises);
+                            $("#praises").val('');
+                            layer.msg(res.msg, {icon: 1,time: 1000});
+                        }else {
+                            layer.msg(res.msg, {icon: 2,time: 1000});
+                        }
+
+                    },
+                    error: function (res) {
+                        layer.msg(res.msg, {icon: 2,time: 1000});
+                    }
+                })
+            }
+        }else{
+            layer.msg("请输入内容",{icon: 2});
+        }
+    }
+    function  attentionMethod() {
+        if(userId==-1){
+            layer.msg('请先登录', {icon: 2});
+            return;
+        }
+        if(attention.text()=='已关注'){
+            if(!flag){
+                flag = true;
+                isAttention(attention,knowledgeUuid,userId,'关注',attentionClass);
+            }
+
+        }else if(attention.text()=='关注'){
+            isAttention(attention,knowledgeUuid,userId,'已关注',isAttentionClass);
+        }else{
+        }
+
+    }
+    function isAttention(attention,knowledgeUuid,userId,content,classValue) {
+        $.post({
+            url: '${ctxPath}/doc/knowledge/isAttention',
+            data: {"knowledgeUuid":knowledgeUuid,"userId":userId,"content":attention.text()},
+            dataType: 'json',
+            success: function (res) {
+                if(res.code==200){
+                    attention.removeClass();
+                    attention.toggleClass(classValue);
+                    attention.text(content);
+                    flag = false;
+                    layer.msg(res.msg, {icon: 1});
+
+                }else {
+                    layer.msg(res.msg, {icon: 2});
+                }
+
+            },
+            error: function (res) {
+                layer.msg(res.msg, {icon: 2});
+            }
+        })
+    }
+    function  praiseMethod() {
+        var title = $("#praiseNum").attr("title");
+        if(userId==-1){
+            layer.msg('请先登录', {icon: 2});
+            return;
+        }
+        if(title==1){//取消赞
+            if(!flag){
+                flag = true;
+                isPraise(praise,knowledgeUuid,userId,1,attentionClass);
+            }
+        }else if(title==0){//点赞
+            if(!flag){
+                flag = true;
+                isPraise(praise,knowledgeUuid,userId,0,isAttentionClass);
+            }
+
+        }
+
+    }
+    function isPraise(praise,knowledgeUuid,userId,value,classValue) {
+        $.post({
+            url: '${ctxPath}/doc/knowledge/isPraise',
+            data: {"knowledgeUuid":knowledgeUuid,"userId":userId,"value":value},
+            dataType: 'json',
+            success: function (res) {
+                if(res.code==200){
+                    $("#praiseNum").text('');
+                    if(value==1){
+                        $("#praiseNum").attr('title','0');
+                    }else if(value==0){
+                        $("#praiseNum").attr('title','1');
+                    }
+                    if(res.content.likes!=parseInt('0')){
+                        $("#praiseNum").text(res.content.likes);
+                    }
+                    praise.removeClass();
+                    praise.toggleClass(classValue);
+                    layer.msg(res.msg, {icon: 1});
+                }else {
+                    layer.msg(res.msg, {icon: 2});
+                }
+                flag = false;
+
+            },
+            error: function (res) {
+                layer.msg(res.msg, {icon: 2,time:1000, shade:0.4});
+            }
+        })
+    }
+    function goodOrBad(type) {
+
+        if(userId==-1){
+            layer.msg('请先登录', {icon: 2});
+            return;
+        }
+        $.post({
+            url: '${ctxPath}/doc/knowledge/badPraise',
+            data: {"docUuid":knowledgeUuid,"type":type},
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                if(res.code==200){
+                    $("#goodOrBadCount").text(res.content);
+                    // layer.msg(res.msg, {icon: 1});
+                }else {
+                    layer.msg(res.msg, {icon: 2});
+                }
+            },
+            error: function (res) {
+                layer.msg(res.msg, {icon: 2,time:1000, shade:0.4});
+            }
+        })
+    }
+    function showInfo(uuid,docClassify,docType) {
+        window.location="${ctxPath}/doc/knowledge/showInfo?uuid="+uuid+"&docClassify="+docClassify+"&docType="+docType;
+    }
+    function editKnowledge(uuid) {
+        window.location="${ctxPath}/doc/knowledge/editInfoResource?uuid="+uuid;
+    }
+
+
+</script>
+</html>
+<!--# } -->

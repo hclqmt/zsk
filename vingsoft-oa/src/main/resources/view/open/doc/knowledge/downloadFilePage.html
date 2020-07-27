@@ -1,0 +1,21 @@
+<input type="hidden" value="${count}" id="searchCount">
+<!--# for(docKnowledge in docKnowledgeList){ -->
+        <div class="col-sm-6 col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${docKnowledge.knowledgeName}</h5>
+                    <div class="row list-item">
+                        <div class="col-sm-6 col-12">
+                            <p>类型：资源知识</p>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <p>创建时间：${docKnowledge.createDate,"yyyy-MM-dd HH:mm:ss"}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button onclick="download('${docKnowledge.docPicUrlIds}')" class="btn  btn-primary btn-sm">下载</button>
+                </div>
+            </div>
+        </div>
+<!--# } -->
