@@ -60,10 +60,10 @@ public class FileController {
 	private OssUtils ossUtils;
 
 
-	private static String ENDPOINT = "oss-cn-shanghai.aliyuncs.com";
-	private static String ACCESSKEYID = "LTAI4GG4ELsMJsYMFY7Vy5M9";
-	private static String ACCESSKEYSECRET = "OSoU6nzKCZzkYCdYfSH9xtkljRoj50";
-	private static String BUCKETNAME = "hcl-oss";
+	private static String ENDPOINT = "oss-cn-shdangdslfhai.aliyuncs.com";
+	private static String ACCESSKEYID = "LTAI4GG4ELsMJsYMFYflldsldw5M9jjhhjj";
+	private static String ACCESSKEYSECRET = "OSoU6zksnzKdllfCfZzkYCdYfSH9xtkljRoj50";
+	private static String BUCKETNAME = "wr-oss";
 	private static String KEY = "images/";
 	
 	/**
