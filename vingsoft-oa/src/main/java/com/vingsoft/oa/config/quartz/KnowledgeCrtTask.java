@@ -12,13 +12,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 @EnableScheduling
+/**
+ * @author hcl
+ */
 public class KnowledgeCrtTask {
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -58,7 +58,9 @@ public class KnowledgeCrtTask {
 
     //获得所以知识的集合
     protected List<KnowledgeSysUser> getIdAndUuidList(List<Object> lists){
-        if (lists == null || lists.size() == 0) return null;
+        if (lists == null || lists.size() == 0) {
+            return null;
+        }
         List<KnowledgeSysUser> list = new ArrayList<>();
         KnowledgeSysUser knowledgeSysUser = new KnowledgeSysUser();
         Map<String,Object>[] maps;
@@ -67,7 +69,7 @@ public class KnowledgeCrtTask {
             goodPraiseMap.entrySet().forEach((e)->{
                 String key = e.getKey();
                 String[] split = key.split("::");
-                System.out.println(split);
+                System.out.println(Arrays.toString(split));
                 knowledgeSysUser.setUserId(Long.valueOf(split[0]));
                 knowledgeSysUser.setKnowledgeUuid(Long.valueOf(split[1]));
                 if("badCount".equals(split[2])){
@@ -83,7 +85,9 @@ public class KnowledgeCrtTask {
     }
     //获得所有用户id和知识id的集合
     protected List<String> getList(List<Object> lists){
-        if (lists == null || lists.size() == 0) return null;
+        if (lists == null || lists.size() == 0) {
+            return null;
+        }
         List<String> list = new ArrayList<>();
         lists.forEach((g)->{
             Map<String,Object> goodPraiseMap = JSONObject.parseObject(JSON.toJSONString(g));
@@ -99,7 +103,9 @@ public class KnowledgeCrtTask {
     }
     protected List<DocKnowledge> getResult(List<Object> lists){
         List<DocKnowledge> docKnowledgeList = new ArrayList<>();
-        if (lists == null || lists.size() == 0) return docKnowledgeList;
+        if (lists == null || lists.size() == 0) {
+            return docKnowledgeList;
+        }
         getCount(getList(lists)).forEach((e1,e2)->{
             DocKnowledge docKnowledge = new DocKnowledge();
             docKnowledge.setUuid(Long.valueOf(e1));
