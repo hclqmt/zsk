@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<div id="addFrom" style="margin: 0 auto;width: 500px;height: 400px;display: none">
+<div id="addFrom" style="margin: 0 auto;width: 600px;height: 400px;display: none">
 <form class="layui-form" lay-filter="forms"  id="froms" style="margin-top: 20px">
     <input type="hidden" id="id" name="id">
     <div class="layui-form-item">
@@ -77,6 +77,7 @@
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-green layui-btn-xs" lay-event="leaveMsg">留言</a>
 </script>
 <script>
     layui.config({
@@ -101,7 +102,7 @@
                 ,{field:'position', title:'职位',width:100}
                 ,{field:'address', title:'地址',width:200}
                 ,{field:'remark', title:'备注',width:200}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:200}
             ]]
             ,page: {
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
@@ -159,6 +160,26 @@
                 });
             }else if(obj.event === 'edit'){
                 openAddUpdate(data,'修改联系人')
+            }else if(obj.event === 'leaveMsg'){
+                layer.prompt({title: '回复：'+data.name, formType: 2}, function(senderContent, index){
+                    $.post({
+                        url: '${ctxPath}/doc/addressBook/addLeave',
+                        data: {"receiverName":data.name,"senderContent":senderContent},
+                        dataType: 'json',
+                        success: function (res) {
+                            if(res.code==200){
+                                layer.msg(res.msg, {icon: 1});
+                            }else {
+                                layer.msg(res.msg, {icon: 2});
+                            }
+
+                        },
+                        error: function (res) {
+                            layer.msg(res.msg, {icon: 2});
+                        }
+                    })
+                    layer.close(index);
+                });
             }
         });
         /**
