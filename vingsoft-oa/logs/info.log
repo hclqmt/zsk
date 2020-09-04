@@ -1,112 +1,18 @@
-2020-07-10 10:04:55 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+2020-09-04 16:41:52 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
 INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 10:04:55 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+2020-09-04 16:41:52 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
 INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 10:04:59 ä¸Šåˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+2020-09-04 16:41:56 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
 INFO:{dataSource-1} inited
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+2020-09-04 16:41:58 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
 INFO:Using default implementation for ThreadExecutor
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
 INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
 INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
 INFO:RAMJobStore initialized.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@4893b980
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 10:05:04 ä¸Šåˆ [Thread: Thread-2][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 10:05:50 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 10:05:51 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 10:05:54 ä¸Šåˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.boot.autoconfigure.quartz.AutowireCapableBeanJobFactory@6ecd9708
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 10:05:59 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-07-10 10:06:01 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-07-10 10:06:01 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 10:06:01 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-07-10 10:06:01 ä¸Šåˆ [Thread: Thread-2][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 10:06:01 ä¸Šåˆ [Thread: Thread-2][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 11:49:04 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:49:04 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:49:07 ä¸Šåˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
 INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
@@ -115,92 +21,49 @@ INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
 INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
 INFO:Quartz scheduler version: 2.3.0
-2020-07-10 11:49:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4faaf13a
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+2020-09-04 16:41:59 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@72018ba5
+2020-09-04 16:42:00 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
 INFO:Context refreshed
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+2020-09-04 16:42:00 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
 INFO:Found 1 custom documentation plugin(s)
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+2020-09-04 16:42:00 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
 INFO:Scanning for api listing references
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 11:49:12 ä¸Šåˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 11:50:04 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:50:04 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:50:07 ä¸Šåˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 11:50:10 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2b84d474
-2020-07-10 11:50:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 11:50:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 11:50:12 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 11:50:12 ä¸Šåˆ [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+2020-09-04 16:42:01 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
 INFO:Starting without optional epoll library
-2020-07-10 11:50:12 ä¸Šåˆ [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+2020-09-04 16:42:01 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
 INFO:Starting without optional kqueue library
-2020-07-10 11:50:13 ä¸Šåˆ [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+2020-09-04 16:42:01 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED started.
-2020-07-10 11:50:13 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+2020-09-04 16:42:02 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 11:50:13 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+2020-09-04 16:42:02 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 11:50:13 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+2020-09-04 16:42:02 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 11:50:13 ä¸Šåˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+2020-09-04 16:42:02 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 11:50:14 ä¸Šåˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+2020-09-04 16:42:03 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
 INFO:{dataSource-1} closed
-2020-07-10 11:50:37 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+2020-09-04 16:44:54 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
 INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:50:37 ä¸Šåˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+2020-09-04 16:44:54 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
 INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 11:50:40 ä¸Šåˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+2020-09-04 16:44:57 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
 INFO:{dataSource-1} inited
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
 INFO:Using default implementation for ThreadExecutor
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
 INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
 INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
 INFO:RAMJobStore initialized.
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
 INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
@@ -209,41 +72,256 @@ INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
 INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
 INFO:Quartz scheduler version: 2.3.0
-2020-07-10 11:50:43 ä¸Šåˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@5ea4d07f
-2020-07-10 11:50:46 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+2020-09-04 16:45:00 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@72018ba5
+2020-09-04 16:45:02 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
 INFO:Context refreshed
-2020-07-10 11:50:46 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+2020-09-04 16:45:02 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
 INFO:Found 1 custom documentation plugin(s)
-2020-07-10 11:50:46 ä¸Šåˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+2020-09-04 16:45:02 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
 INFO:Scanning for api listing references
-2020-07-10 11:50:48 ä¸Šåˆ [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED started.
-2020-07-10 11:50:49 ä¸Šåˆ [Thread: scheduler_Worker-1][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+2020-09-04 16:45:03 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
 INFO:Starting without optional epoll library
-2020-07-10 11:50:49 ä¸Šåˆ [Thread: scheduler_Worker-1][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+2020-09-04 16:45:03 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
 INFO:Starting without optional kqueue library
-2020-07-10 13:16:56 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+2020-09-04 16:45:03 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-09-04 16:45:04 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:16:56 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+2020-09-04 16:45:04 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 13:16:56 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+2020-09-04 16:45:04 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:16:56 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+2020-09-04 16:45:04 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
 INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 13:16:57 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.JobRunShell >> Method: org.quartz.core.JobRunShell.run(JobRunShell.java:211) ]
+2020-09-04 16:45:05 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+INFO:{dataSource-1} closed
+2020-09-04 16:45:26 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:45:26 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:45:29 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+INFO:{dataSource-1} inited
+2020-09-04 16:45:32 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+INFO:Using default implementation for ThreadExecutor
+2020-09-04 16:45:32 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-04 16:45:32 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+INFO:Quartz Scheduler v.2.3.0 created.
+2020-09-04 16:45:33 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+INFO:RAMJobStore initialized.
+2020-09-04 16:45:33 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-04 16:45:33 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-09-04 16:45:33 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+INFO:Quartz scheduler version: 2.3.0
+2020-09-04 16:45:33 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@72018ba5
+2020-09-04 16:45:34 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+INFO:Context refreshed
+2020-09-04 16:45:34 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+INFO:Found 1 custom documentation plugin(s)
+2020-09-04 16:45:34 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+INFO:Scanning for api listing references
+2020-09-04 16:45:35 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+INFO:Starting without optional epoll library
+2020-09-04 16:45:35 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+INFO:Starting without optional kqueue library
+2020-09-04 16:45:35 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-09-04 16:45:36 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:45:36 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-09-04 16:45:36 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:45:36 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-04 16:45:37 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+INFO:{dataSource-1} closed
+2020-09-04 16:45:54 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:45:54 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:45:58 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+INFO:{dataSource-1} inited
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+INFO:Using default implementation for ThreadExecutor
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+INFO:Quartz Scheduler v.2.3.0 created.
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+INFO:RAMJobStore initialized.
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+INFO:Quartz scheduler version: 2.3.0
+2020-09-04 16:46:01 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3b21b0f5
+2020-09-04 16:46:04 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+INFO:Context refreshed
+2020-09-04 16:46:04 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+INFO:Found 1 custom documentation plugin(s)
+2020-09-04 16:46:04 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+INFO:Scanning for api listing references
+2020-09-04 16:46:04 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+INFO:Starting without optional epoll library
+2020-09-04 16:46:04 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+INFO:Starting without optional kqueue library
+2020-09-04 16:46:05 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-09-04 16:46:05 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:46:05 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-09-04 16:46:05 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:46:05 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-04 16:46:06 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+INFO:{dataSource-1} closed
+2020-09-04 16:46:48 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:46:48 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:46:51 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+INFO:{dataSource-1} inited
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+INFO:Using default implementation for ThreadExecutor
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+INFO:Quartz Scheduler v.2.3.0 created.
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+INFO:RAMJobStore initialized.
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+INFO:Quartz scheduler version: 2.3.0
+2020-09-04 16:46:54 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3b21b0f5
+2020-09-04 16:46:56 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+INFO:Context refreshed
+2020-09-04 16:46:56 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+INFO:Found 1 custom documentation plugin(s)
+2020-09-04 16:46:56 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+INFO:Scanning for api listing references
+2020-09-04 16:46:57 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+INFO:Starting without optional epoll library
+2020-09-04 16:46:57 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+INFO:Starting without optional kqueue library
+2020-09-04 16:46:57 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-09-04 16:46:58 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:46:58 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-09-04 16:46:58 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:46:58 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-04 16:46:59 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+INFO:{dataSource-1} closed
+2020-09-04 16:48:12 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:48:12 ÏÂÎç [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
+INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-04 16:48:16 ÏÂÎç [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
+INFO:{dataSource-1} inited
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
+INFO:Using default implementation for ThreadExecutor
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
+INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
+INFO:Quartz Scheduler v.2.3.0 created.
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
+INFO:RAMJobStore initialized.
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
+INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
+INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
+INFO:Quartz scheduler version: 2.3.0
+2020-09-04 16:48:24 ÏÂÎç [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
+INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2de5eb04
+2020-09-04 16:48:33 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
+INFO:Context refreshed
+2020-09-04 16:48:33 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
+INFO:Found 1 custom documentation plugin(s)
+2020-09-04 16:48:33 ÏÂÎç [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
+INFO:Scanning for api listing references
+2020-09-04 16:48:33 ÏÂÎç [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
+INFO:Starting without optional epoll library
+2020-09-04 16:48:33 ÏÂÎç [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
+INFO:Starting without optional kqueue library
+2020-09-04 16:48:34 ÏÂÎç [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED started.
+2020-09-04 16:48:35 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:48:35 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2020-09-04 16:48:35 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
+2020-09-04 16:48:35 ÏÂÎç [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
+INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-04 16:48:35 ÏÂÎç [Thread: scheduler_Worker-2][ Class:org.quartz.core.JobRunShell >> Method: org.quartz.core.JobRunShell.run(JobRunShell.java:211) ]
 ERROR:Job DEFAULT.firstJobDetail threw an unhandled Exception: 
-org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
+org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is org.springframework.data.redis.RedisSystemException: Unknown redis exception; nested exception is java.util.concurrent.CancellationException
 	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
 	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
+Caused by: org.springframework.data.redis.RedisSystemException: Unknown redis exception; nested exception is java.util.concurrent.CancellationException
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.getFallback(FallbackExceptionTranslationStrategy.java:53)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:43)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:257)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.convertLettuceAccessException(LettuceHashCommands.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:195)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:862)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$12(DefaultHashOperations.java:231)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:224)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:184)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:95)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:231)
+	at com.vingsoft.utils.RedisUtils.hmget(RedisUtils.java:166)
 	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -252,18 +330,60 @@ Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot b
 	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
 	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
 	... 3 more
-2020-07-10 13:16:57 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.ErrorLogger >> Method: org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2401) ]
+Caused by: java.util.concurrent.CancellationException
+	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2263)
+	at io.lettuce.core.protocol.AsyncCommand.cancel(AsyncCommand.java:144)
+	at io.lettuce.core.protocol.AsyncCommand.cancel(AsyncCommand.java:178)
+	at io.lettuce.core.protocol.DefaultEndpoint.cancelCommands(DefaultEndpoint.java:634)
+	at io.lettuce.core.protocol.DefaultEndpoint.notifyDrainQueuedCommands(DefaultEndpoint.java:544)
+	at io.lettuce.core.protocol.CommandHandler.channelInactive(CommandHandler.java:303)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:75)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:46)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:75)
+	at io.lettuce.core.PlainChannelInitializer$1.channelInactive(PlainChannelInitializer.java:85)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:947)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:822)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:466)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-04 16:48:35 ÏÂÎç [Thread: scheduler_Worker-2][ Class:org.quartz.core.ErrorLogger >> Method: org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2401) ]
 ERROR:Job (DEFAULT.firstJobDetail threw an exception.
-org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject]
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is org.springframework.data.redis.RedisSystemException: Unknown redis exception; nested exception is java.util.concurrent.CancellationException]
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
 	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
+Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is org.springframework.data.redis.RedisSystemException: Unknown redis exception; nested exception is java.util.concurrent.CancellationException
 	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
 	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
 	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
 	... 1 more
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
+Caused by: org.springframework.data.redis.RedisSystemException: Unknown redis exception; nested exception is java.util.concurrent.CancellationException
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.getFallback(FallbackExceptionTranslationStrategy.java:53)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:43)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:257)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.convertLettuceAccessException(LettuceHashCommands.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:195)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:862)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$12(DefaultHashOperations.java:231)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:224)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:184)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:95)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:231)
+	at com.vingsoft.utils.RedisUtils.hmget(RedisUtils.java:166)
 	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -272,275 +392,36 @@ Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot b
 	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
 	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
 	... 3 more
-2020-07-10 13:16:58 ä¸‹åˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 13:21:55 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:21:55 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:21:58 ä¸‹åˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 13:22:01 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@2b84d474
-2020-07-10 13:22:03 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 13:22:03 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 13:22:03 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 13:22:03 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
-INFO:Starting without optional epoll library
-2020-07-10 13:22:03 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
-INFO:Starting without optional kqueue library
-2020-07-10 13:22:04 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 13:22:04 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:22:04 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 13:22:05 ä¸‹åˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 13:23:54 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:23:54 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:23:57 ä¸‹åˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 13:24:00 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@3dd1f392
-2020-07-10 13:24:02 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 13:24:02 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 13:24:02 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 13:24:03 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
-INFO:Starting without optional epoll library
-2020-07-10 13:24:03 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
-INFO:Starting without optional kqueue library
-2020-07-10 13:24:03 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 13:24:03 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:24:03 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 13:24:05 ä¸‹åˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 13:24:17 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:24:17 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:24:20 ä¸‹åˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 13:24:23 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@398a363e
-2020-07-10 13:24:26 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 13:24:26 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 13:24:26 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 13:24:30 ä¸‹åˆ [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED started.
-2020-07-10 13:24:31 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
-INFO:Starting without optional epoll library
-2020-07-10 13:24:31 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
-INFO:Starting without optional kqueue library
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.JobRunShell >> Method: org.quartz.core.JobRunShell.run(JobRunShell.java:211) ]
-ERROR:Job DEFAULT.firstJobDetail threw an unhandled Exception: 
-org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
-	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
-	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
-	... 3 more
-2020-07-10 13:24:42 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.ErrorLogger >> Method: org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2401) ]
-ERROR:Job (DEFAULT.firstJobDetail threw an exception.
-org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
-	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
-	... 1 more
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
-	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
-	... 3 more
-2020-07-10 13:24:43 ä¸‹åˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
-INFO:{dataSource-1} closed
-2020-07-10 13:26:57 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:26:57 ä¸‹åˆ [Thread: main][ Class:org.springframework.data.repository.config.RepositoryConfigurationDelegate >> Method: org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:172) ]
-INFO:Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-07-10 13:27:01 ä¸‹åˆ [Thread: main][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:715) ]
-INFO:{dataSource-1} inited
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1208) ]
-INFO:Using default implementation for ThreadExecutor
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.SchedulerSignalerImpl >> Method: org.quartz.core.SchedulerSignalerImpl.<init>(SchedulerSignalerImpl.java:61) ]
-INFO:Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.<init>(QuartzScheduler.java:229) ]
-INFO:Quartz Scheduler v.2.3.0 created.
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.simpl.RAMJobStore >> Method: org.quartz.simpl.RAMJobStore.initialize(RAMJobStore.java:155) ]
-INFO:RAMJobStore initialized.
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.initialize(QuartzScheduler.java:294) ]
-INFO:Scheduler meta-data: Quartz Scheduler (v2.3.0) 'scheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1362) ]
-INFO:Quartz scheduler 'scheduler' initialized from an externally provided properties instance.
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.impl.StdSchedulerFactory >> Method: org.quartz.impl.StdSchedulerFactory.instantiate(StdSchedulerFactory.java:1366) ]
-INFO:Quartz scheduler version: 2.3.0
-2020-07-10 13:27:04 ä¸‹åˆ [Thread: main][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.setJobFactory(QuartzScheduler.java:2287) ]
-INFO:JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@4110e631
-2020-07-10 13:27:07 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) ]
-INFO:Context refreshed
-2020-07-10 13:27:07 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper >> Method: springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) ]
-INFO:Found 1 custom documentation plugin(s)
-2020-07-10 13:27:07 ä¸‹åˆ [Thread: main][ Class:springfox.documentation.spring.web.scanners.ApiListingReferenceScanner >> Method: springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) ]
-INFO:Scanning for api listing references
-2020-07-10 13:27:12 ä¸‹åˆ [Thread: Quartz Scheduler [scheduler]][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.start(QuartzScheduler.java:547) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED started.
-2020-07-10 13:27:13 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.EpollProvider >> Method: io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68) ]
-INFO:Starting without optional epoll library
-2020-07-10 13:27:13 ä¸‹åˆ [Thread: main][ Class:io.lettuce.core.KqueueProvider >> Method: io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70) ]
-INFO:Starting without optional kqueue library
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:666) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutting down.
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.standby(QuartzScheduler.java:585) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED paused.
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: Thread-3][ Class:org.quartz.core.QuartzScheduler >> Method: org.quartz.core.QuartzScheduler.shutdown(QuartzScheduler.java:740) ]
-INFO:Scheduler scheduler_$_NON_CLUSTERED shutdown complete.
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.JobRunShell >> Method: org.quartz.core.JobRunShell.run(JobRunShell.java:211) ]
-ERROR:Job DEFAULT.firstJobDetail threw an unhandled Exception: 
-org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
-	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
-	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
-	... 3 more
-2020-07-10 13:27:21 ä¸‹åˆ [Thread: scheduler_Worker-1][ Class:org.quartz.core.ErrorLogger >> Method: org.quartz.core.ErrorLogger.schedulerError(QuartzScheduler.java:2401) ]
-ERROR:Job (DEFAULT.firstJobDetail threw an exception.
-org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject]
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
-	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
-Caused by: org.springframework.scheduling.quartz.JobMethodInvocationFailedException: Invocation of method 'crtTask' on target class [class com.vingsoft.oa.config.quartz.KnowledgeCrtTask] failed; nested exception is java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:276)
-	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:75)
-	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
-	... 1 more
-Caused by: java.lang.ClassCastException: com.alibaba.fastjson.JSONArray cannot be cast to com.alibaba.fastjson.JSONObject
-	at com.alibaba.fastjson.JSON.parseObject(JSON.java:175)
-	at com.vingsoft.oa.config.quartz.KnowledgeCrtTask.crtTask(KnowledgeCrtTask.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:280)
-	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:267)
-	... 3 more
-2020-07-10 13:27:22 ä¸‹åˆ [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
+Caused by: java.util.concurrent.CancellationException
+	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2263)
+	at io.lettuce.core.protocol.AsyncCommand.cancel(AsyncCommand.java:144)
+	at io.lettuce.core.protocol.AsyncCommand.cancel(AsyncCommand.java:178)
+	at io.lettuce.core.protocol.DefaultEndpoint.cancelCommands(DefaultEndpoint.java:634)
+	at io.lettuce.core.protocol.DefaultEndpoint.notifyDrainQueuedCommands(DefaultEndpoint.java:544)
+	at io.lettuce.core.protocol.CommandHandler.channelInactive(CommandHandler.java:303)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:75)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:46)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:75)
+	at io.lettuce.core.PlainChannelInitializer$1.channelInactive(PlainChannelInitializer.java:85)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:947)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:822)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:466)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-04 16:48:36 ÏÂÎç [Thread: Thread-3][ Class:com.alibaba.druid.pool.DruidDataSource >> Method: com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1444) ]
 INFO:{dataSource-1} closed
