@@ -115,8 +115,8 @@ public class DocKnowledgeService extends BaseService<DocKnowledge>{
 		sqlManager.updateBatch("doc.knowledge.badBatchList", list);
 	}
 
-	public List<DocKnowledge> findByDocClassify(String docClassify,Long uuid){
-		return docKnowledgeDao.findByDocClassify(docClassify,uuid);
+	public List<DocKnowledge> findByDocClassify(String docClassify,Long uuid,Integer isWordResource){
+		return docKnowledgeDao.findByDocClassify(docClassify,uuid,isWordResource);
 	}
 
 	public List<DocKnowledge> findByDocValue(Long uuid){

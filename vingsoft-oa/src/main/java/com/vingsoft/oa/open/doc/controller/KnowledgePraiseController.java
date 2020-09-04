@@ -72,7 +72,7 @@ public class KnowledgePraiseController extends BaseController {
         String locations = docKnowledgeService.getLocationByDocClassify(docClassify);
         mav.addObject("locations",locations);
         //获得同类知识
-        List<DocKnowledge> theSameDocKnowledgeList = docKnowledgeService.findByDocClassify(docClassify,docKnowledge.getUuid());
+        List<DocKnowledge> theSameDocKnowledgeList = docKnowledgeService.findByDocClassify(docClassify,docKnowledge.getUuid(),docKnowledge.getIsWordResource());
         mav.addObject("theSameDocKnowledgeList",theSameDocKnowledgeList);
         //推荐知识
         List<DocKnowledge> theRecommendSDocKnowledgeList = docKnowledgeService.findByDocValue(docKnowledge.getUuid());

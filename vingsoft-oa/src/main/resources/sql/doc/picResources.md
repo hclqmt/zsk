@@ -23,3 +23,6 @@ findPage
 	@if(parentUuid!=""&&!isEmpty(parentUuid)){
 		and parent_uuid = #parentUuid#
 	@}
+findCount
+===
+    select count(1) from zsk_pic_resources where parent_uuid=#parentUuid# limit 1;

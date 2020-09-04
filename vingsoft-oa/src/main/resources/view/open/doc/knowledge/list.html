@@ -95,7 +95,7 @@
         if (readPermissions=='1'){
             parent.location="${ctxPath}/doc/knowledge/showInfo?uuid="+uuid+"&docClassify="+docClassify+"&docType="+docType;
         }else if(userId=='-1'){
-            layer.msg("前先登录",{icon: 2,time:1000, shade:0.4})
+            layer.msg("请先登录",{icon: 2,time:1000, shade:0.4})
             return false;
         }else if(readPermissions == '0'){
             if(userId===createById){

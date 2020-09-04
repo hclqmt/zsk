@@ -99,8 +99,13 @@ badBatchList
 
 findByDocClassify
 ===
-    select UNIX_TIMESTAMP(z.create_date) time ,z.* from zsk_doc_knowledge z  where z.doc_classify=#docClassify# and z.uuid<>#uuid# order by z.update_date
-    desc limit 1,10;
+    select UNIX_TIMESTAMP(z.create_date) time ,z.* from zsk_doc_knowledge z  
+    where 1=1
+    @if(isWordResource!="" && !isEmpty(isWordResource)){
+        and is_word_resource=#isWordResource#
+    @}
+     and z.doc_classify=#docClassify# and z.uuid<>#uuid# order by z.update_date
+    desc limit 0,10;
 
 findByDocValue
 ===

@@ -343,7 +343,7 @@ public class DocKnowledgeController extends BaseController {
 		String locations = docKnowledgeService.getLocationByDocClassify(docClassify);
 		mav.addObject("locations",locations);
 		//获得同类知识
-		List<DocKnowledge> theSameDocKnowledgeList = docKnowledgeService.findByDocClassify(docClassify,docKnowledge.getUuid());
+		List<DocKnowledge> theSameDocKnowledgeList = docKnowledgeService.findByDocClassify(docClassify,docKnowledge.getUuid(),docKnowledge.getIsWordResource());
 		//推荐知识
 		List<DocKnowledge> theRecommendSDocKnowledgeList = docKnowledgeService.findByDocValue(docKnowledge.getUuid());
 		mav.addObject("theSameDocKnowledgeList",theSameDocKnowledgeList);
@@ -809,6 +809,14 @@ public class DocKnowledgeController extends BaseController {
 		String uniqueCode = fileManage.uploadFileToFileManage(fileInfo);
 		String url = fileManage.getDownloadURLStr(uniqueCode);
 		if(ObjectKit.isNotNull(uuid)){
+			DocKnowledge docKnowledge = docKnowledgeService.findByUuid(uuid);
+			int count = picResourcesService.findCount(docKnowledge.getDocPicUrlIds());
+			if (count==1){
+				version = parentUuid;
+			}else{
+				docKnowledge.setKnowledgeName(file.getOriginalFilename());
+				docKnowledgeService.update(docKnowledge);
+			}
 			version = parentUuid;
 		}else{
 			try {
@@ -826,7 +834,7 @@ public class DocKnowledgeController extends BaseController {
 					docKnowledge.setCreateById(id);
 					docKnowledge.setDocPicUrlIds(version);
 					docKnowledge.setDocType("1");
-					docKnowledge.setLabel("1,2");
+					docKnowledge.setLabel("1");
 					docKnowledge.setDocClassify(knowledgeClassify.getUuid());
 					docKnowledge.setKnowledgeName(file.getOriginalFilename());
 					docKnowledge.setIsReleaseGroup("0");

@@ -38,4 +38,8 @@ public class PicResourcesService extends BaseService<PicResources> {
         response.setData(query.getList());
         return response;
     }
+
+    public int findCount(String parentUuid){
+        return picResourcesDao.findCount(parentUuid);
+    }
 }

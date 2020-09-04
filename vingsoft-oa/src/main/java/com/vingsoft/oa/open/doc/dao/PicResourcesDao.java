@@ -1,6 +1,5 @@
 package com.vingsoft.oa.open.doc.dao;
 
-import com.vingsoft.oa.open.doc.entity.DocKnowledge;
 import com.vingsoft.oa.open.doc.entity.PicResources;
 import org.beetl.sql.core.annotatoin.Param;
 import org.beetl.sql.core.annotatoin.SqlResource;
@@ -18,4 +17,6 @@ public interface PicResourcesDao extends BaseMapper<PicResources> {
     PicResources findByUuid(@Param("uuid") Long uuid);
 
     List<PicResources> findByParentUuid(@Param("parentUuid") String parentUuid);
+
+    int findCount(@Param("parentUuid") String parentUuid);
 }

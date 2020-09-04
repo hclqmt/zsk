@@ -43,7 +43,7 @@ public interface DocKnowledgeDao extends BaseMapper<DocKnowledge>{
 
 	String getLocationByDocClassify(@Param("docClassify") String docClassify);
 
-	List<DocKnowledge> findByDocClassify(@Param("docClassify") String docClassify,@Param("uuid") Long uuid);
+	List<DocKnowledge> findByDocClassify(@Param("docClassify") String docClassify,@Param("uuid") Long uuid,@Param("isWordResource")Integer isWordResource);
 
 	List<DocKnowledge> findByDocValue(@Param("uuid") Long uuid);
 

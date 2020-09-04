@@ -12,10 +12,13 @@
     <input type="hidden" id="parentUuid" value="${docKnowledge.docPicUrlIds}">
     <input type="hidden" id="uuid" value="${docKnowledge.uuid}">
     <div class="layui-form-item">
-        <label class="layui-form-label">已上传文件</label>
-        <div class="layui-input-block">
-            <table class="layui-hide" id="test" lay-filter="test"></table>
-        </div>
+        <!--# if(docKnowledge.docPicUrlIds!='1'){ -->
+            <label class="layui-form-label">已上传文件</label>
+            <div class="layui-input-block">
+                <table class="layui-hide" id="test" lay-filter="test"></table>
+            </div>
+        <!--# } -->
+
         <label class="layui-form-label">word文件</label>
         <div class="layui-input-block">
             <div class="layui-upload">
@@ -113,6 +116,7 @@
                         ,tds = tr.children();
                     tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
                     tds.eq(3).html(''); //清空操作
+                    instance.reload();
                     return delete this.files[index]; //删除文件队列已经上传成功的文件
                 }
                 this.error(res,index, upload);

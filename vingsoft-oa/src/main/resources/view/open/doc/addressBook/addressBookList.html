@@ -130,11 +130,14 @@
                     }
                     break;
                 case 'delete':
-                    var idArr = [];
-                    data.forEach((e)=>{
-                        idArr.push(e.id);
-                    })
-                    deletes(idArr);
+                    if(data.length>0){
+                        var idArr = [];
+                        data.forEach((e)=>{
+                            idArr.push(e.id);
+                        })
+                        deletes(idArr);
+                    }
+
                     break;
                 //自定义头工具栏右侧图标 - 提示
                 case 'LAYTABLE_TIPS':
@@ -258,18 +261,21 @@
                 ,dataType: 'json'
                 ,success(res) {
                     res=JSON.parse(res.data);
-                    res.unshift({  name: "姓名",phone: '号码', position: '职位', address: "地址", remark: '备注'});
-                    var data = excel.filterExportData(res, [
-                        'name'
-                        ,'phone'
-                        ,'position'
-                        ,'address'
-                        ,'remark'
+                    if (res.length>0){
+                        res.unshift({  name: "姓名",phone: '号码', position: '职位', address: "地址", remark: '备注'});
+                        var data = excel.filterExportData(res, [
+                            'name'
+                            ,'phone'
+                            ,'position'
+                            ,'address'
+                            ,'remark'
 
-                    ]);
-                    excel.exportExcel({
-                        sheet1: data
-                    }, '通讯录.xlsx', 'xlsx');
+                        ]);
+                        excel.exportExcel({
+                            sheet1: data
+                        }, '通讯录.xlsx', 'xlsx');
+                    }
+
 
                 }
                 ,error() {
