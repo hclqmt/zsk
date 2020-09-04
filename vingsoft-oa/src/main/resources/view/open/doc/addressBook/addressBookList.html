@@ -1,0 +1,282 @@
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link rel="stylesheet" href="${ctxPath}/plugins/layuiadmin/layui/css/layui.css?v=2.4.5"/>
+<link rel="stylesheet" href="${ctxPath}/plugins/layuiadmin/style/admin.css">
+<link rel="stylesheet" href="${ctxPath}/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${ctxPath}/css/style_boot.css">
+<link rel="stylesheet" href="${ctxPath}/plugins/layuiadmin/layui/css/layui.css?v=2.4.5"/>
+<script type="text/javascript" src="${ctxPath}/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/plugins/layuiadmin/layui-v2.4.5/layui.js"></script>
+<script type="text/javascript" src="${ctxPath}/js/common/Feng.js"></script>
+
+<body>
+<div class="container">
+    <h3 class="big_title">通讯录</h3>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <table class="layui-hide" id="test" lay-filter="test"></table>
+        </div>
+    </div>
+</div>
+<div id="addFrom" style="margin: 0 auto;width: 500px;height: 400px;display: none">
+<form class="layui-form" lay-filter="forms"  id="froms" style="margin-top: 20px">
+    <input type="hidden" id="id" name="id">
+    <div class="layui-form-item">
+        <label  class="layui-form-label">姓名：<span style="color: red">*</span></label>
+        <div class="layui-input-block">
+            <input type="text" name="name" id="name" lay-verify="required" lay-reqtext="用户名是必填项，岂能为空？" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">电话：<span style="color: red">*</span></label>
+            <div class="layui-input-block">
+                <input type="tel" name="phone"  id="phone" lay-verify="required|phone"  placeholder="请输入联系方式" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">职位：</label>
+        <div class="layui-input-block">
+            <input type="text" name="position" id="position" placeholder="请输入职位" autocomplete="on" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">地址：</label>
+        <div class="layui-input-block">
+            <input type="text" name="address" id="address" placeholder="请输入地址" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label" >备注：</label>
+        <div class="layui-input-block">
+            <textarea  name="remark" id="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+
+<script type="text/html" id="toolbarDemo">
+    <div class="appClass">
+        <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="update">修改</button>
+        <button class="layui-btn layui-btn-sm" lay-event="delete">删除</button>
+        <button class="layui-btn layui-btn-sm" id="exportExcel" name="exportExcel" >导出Excel</button>
+<!--        <button type="button" lay-submit="" class="layui-btn layui-btn-warm" >-->
+<!--            <i class="layui-icon"></i>导出Excel</button>-->
+    </div>
+
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+    layui.config({
+        base: '${ctxPath}/plugins/layuiadmin/layui_exts/' //静态资源所在路径
+    }).use(['layer','table','form','excel'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var table = layui.table;
+        var form = layui.form;
+        var excel = layui.excel;
+        var instance = table.render({
+            elem: '#test'
+            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            ,url:'${ctxPath}/doc/addressBook/queryAddressBookList'
+            ,title: '通讯录列表'
+            ,defaultToolbar: [{ }]
+            ,cols: [[
+                {type:'checkbox'}
+                ,{field: 'id', title: 'id', width: 80,hide:true}
+                ,{field:'name', title:'姓名', edit: 'text'}
+                ,{field:'phone', title:'电话', width:200}
+                ,{field:'position', title:'职位',width:100}
+                ,{field:'address', title:'地址',width:200}
+                ,{field:'remark', title:'备注',width:200}
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+            ]]
+            ,page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                ,groups: 1 //只显示 1 个连续页码
+                ,first: false //不显示首页
+                ,last: false //不显示尾页
+
+            }
+        });
+
+        //头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            var data = checkStatus.data;
+            switch(obj.event){
+                case 'add':
+                    openAddUpdate('','添加联系人');
+                    break;
+                case 'update':
+                    if (data.length==0){
+                        layer.msg('请至少选一个');
+                    }else if (data.length>1){
+                        layer.msg('请不要一次选多个');
+                    }else{
+                        openAddUpdate(data[0],'修改联系人');
+                    }
+                    break;
+                case 'delete':
+                    var idArr = [];
+                    data.forEach((e)=>{
+                        idArr.push(e.id);
+                    })
+                    deletes(idArr);
+                    break;
+                //自定义头工具栏右侧图标 - 提示
+                case 'LAYTABLE_TIPS':
+                    layer.alert('这是工具栏右侧自定义的一个图标按钮');
+                    break;
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的要删除通讯录好友吗', function(index){
+                    obj.del();
+                    var idArr = [];
+                    idArr.push(data.id);
+                    deletes(idArr);
+                    layer.close(index);
+                });
+            }else if(obj.event === 'edit'){
+                openAddUpdate(data,'修改联系人')
+            }
+        });
+        /**
+         * 删除菜单
+         */
+        function deletes(roleId) {
+            $.ajax({
+                type: "delete",
+                url: "${ctxPath}/doc/addressBook/delete",
+                contentType: 'application/json',
+                data: JSON.stringify(roleId),
+                cache: false,
+                async: false,
+                timeout: 60000,
+                success: function (result) {
+                    if (result.state == 1) {
+                        Feng.success(result.msg);
+                        instance.reload();
+                    } else {
+                        Feng.error(result.msg);
+                    }
+                },
+                error: function (err) {
+                    Feng.error("系统繁忙，请稍后重试！");
+                }
+            });
+        }
+
+        function openAddUpdate(data,title){
+            layer.open({
+                type:1,
+                area:['700px','550px'],
+                title: title
+                ,content: $("#addFrom"),
+                shade: 0,
+                btn: ['确定', '取消'],
+                closeBtn : 1,
+                btnAlign:'c',
+                yes:function (index){
+                    form.on('submit(save-btn)', function (data) {
+                        data.field.id=$("#id").val();
+                        layer.load(2);
+                        $.post('${ctxPath}/doc/addressBook/save', data.field, function (res) {
+                            layer.closeAll('loading');
+                            if (res.code == 200) {
+                                layer.msg(res.msg, {icon: 1});
+                                layer.close(index);
+                                table.reload('test',{
+                                    page:{
+                                        curr:1
+                                    }
+                                })
+                            } else {
+                                layer.msg(res.msg, {icon: 2});
+                            }
+                        }, 'json');
+                        return false;
+                    });
+                },
+                success: function (layero) {
+                    $("#froms")[0].reset();
+                    // 添加form标识
+                    layero.addClass('layui-form');
+                    // 将保存按钮改变成提交按钮
+                    layero.find('.layui-layer-btn0').attr({
+                        'lay-filter': 'save-btn',
+                        'lay-submit': ''
+                    });
+                    form.render();
+                    if(data!=null&&data!=undefined){
+                        form.val("forms",{
+                           "name":data.name,
+                           "phone":data.phone,
+                           "address":data.address,
+                           "position":data.position,
+                           "remark":data.remark,
+                           "id":data.id
+                        });
+                    }
+                },
+                cancel: function(index, layero){
+                    if(true){  //条件一直成立，所以会先执行if中代码
+                        layer.confirm("确定退出吗？", {}, function (index1) {  //点击确认执行
+                            layer.close(index1)
+                            layer.close(index);
+                        }, function (index1) {  // 点击取消执行
+                            layer.close(index1)
+                        })
+                        return false;
+                    }
+                }
+
+
+            });
+        }
+
+        $('#exportExcel').on('click', function(){
+            $.ajax({
+                url: '${ctxPath}/doc/addressBook/excelAddressBookList'
+                ,dataType: 'json'
+                ,success(res) {
+                    res=JSON.parse(res.data);
+                    res.unshift({  name: "姓名",phone: '号码', position: '职位', address: "地址", remark: '备注'});
+                    var data = excel.filterExportData(res, [
+                        'name'
+                        ,'phone'
+                        ,'position'
+                        ,'address'
+                        ,'remark'
+
+                    ]);
+                    excel.exportExcel({
+                        sheet1: data
+                    }, '通讯录.xlsx', 'xlsx');
+
+                }
+                ,error() {
+                    layer.alert('通讯录导出失败');
+                }
+            });
+        });
+    });
+</script>
+</html>
