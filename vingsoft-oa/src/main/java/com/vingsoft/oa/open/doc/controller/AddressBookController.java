@@ -112,7 +112,11 @@ public class AddressBookController extends BaseController {
                 leaveMessage.setUserId(sysUserNow.getId());
                 leaveMessage.setNickname(sysUserNow.getNickname());
                 leaveMessage.setContent(senderContent);
-                if (leaveMessageService.save(leaveMessage)){
+                leaveMessage.setPraiseNum(0);
+                leaveMessage.setOppositionNum(0);
+                if (receiverName.equals(sysUserNow.getNickname())){
+                    response = new SimpleResponse(0,"自己不需要给自己留言哦",500);
+                }else if (leaveMessageService.save(leaveMessage)){
                     response = new SimpleResponse(1,"留言成功",200);
                 }else{
                     response = new SimpleResponse(0,"留言失败",500);
