@@ -10,7 +10,7 @@ import java.util.Date;
 * gen by beetlsql 2020-06-22
 */
 @Data
-@Table(name="zsk_task.zsk_leave_message_reply")
+@Table(name="zsk_leave_message_reply")
 public class LeaveMessageReply {
 	
 	/*

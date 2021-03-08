@@ -38,12 +38,13 @@
             $.post('loginInfo', obj.field, function (res) {
                 if (200 == res.code) {
                     layer.msg('登录成功', {icon: 1, time: 1500}, function () {
-                        if(prevUrl != ''&&prevUrl != undefined){
-                            // parent.location='${ctxPath}/openIndex?prevUrl=${requestURI}';
-                            postToPage(prevUrl);
-                        }else {
-                            parent.location='${ctxPath}/openIndex';
-                        }
+                        parent.location='${ctxPath}/openIndex';
+                        // if(prevUrl != ''&&prevUrl != undefined){
+                        //     // parent.location='${ctxPath}/openIndex?prevUrl=${requestURI}';
+                        //     postToPage(prevUrl);
+                        // }else {
+                        //     parent.location='${ctxPath}/openIndex';
+                        // }
                     });
                 } else {
                     layer.closeAll('loading');
@@ -62,6 +63,7 @@
         f.target='_parent';
         f.innerHTML='<input type="hidden" name="prevUrl" value="'+prevUrl+'"/>';
         document.body.appendChild(f);
+        alert("2")
         f.submit();
     }
 </script>

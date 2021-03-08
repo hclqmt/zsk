@@ -15,7 +15,7 @@
 	<artifactId>vingsoft-oa</artifactId>
 	<name>vingsoft-oa</name>
 	<url>http://maven.apache.org</url>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<!-- <packaging>war</packaging> -->
 	
 	<properties>

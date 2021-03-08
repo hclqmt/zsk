@@ -18,7 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.Date;
 import java.util.List;
 
@@ -43,8 +45,18 @@ public class AddressBookController extends BaseController {
     private LeaveMessageService leaveMessageService;
 
     @GetMapping("/addressBookList")
-    public ModelAndView list(HttpSession session) {
-        mav.setViewName(PREFIX+"addressBookList");
+    public ModelAndView list(HttpServletRequest request) {
+        SysUser sysUser = LoginUser.getInstance();
+        if (ObjectKit.isNotNull(sysUser)){
+            mav.addObject("userName",sysUser.getNickname());
+            mav.setViewName(PREFIX+"addressBookList");
+        }else{
+            String servletPath = request.getServletPath();
+            mav.addObject("requestURI",servletPath);
+            mav.setViewName("redirect:/login");
+            return mav;
+        }
+
         return mav;
     }
 
@@ -112,6 +124,8 @@ public class AddressBookController extends BaseController {
                 leaveMessage.setUserId(sysUserNow.getId());
                 leaveMessage.setNickname(sysUserNow.getNickname());
                 leaveMessage.setContent(senderContent);
+                leaveMessage.setOppositionNum(0);
+                leaveMessage.setPraiseNum(0);
                 if (leaveMessageService.save(leaveMessage)){
                     response = new SimpleResponse(1,"留言成功",200);
                 }else{
@@ -119,14 +133,21 @@ public class AddressBookController extends BaseController {
                 }
 
             }else{
-                response = new SimpleResponse(0,"没有该用户",500);
+                response = new SimpleResponse(0,"抱歉，知识库中没有该用户无法留言",500);
             }
             return response;
 
         }catch (Exception e){
+            System.out.println("留言报错"+getExceptionInfo(e));
             response = new SimpleResponse(0,"留言失败",500);
             return response;
         }
 
+    }
+
+    public static String getExceptionInfo(Exception e){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        e.printStackTrace(new PrintStream(baos));
+        return baos.toString();
     }
 }

@@ -143,6 +143,7 @@
         dtree.setCheckbarType("only");
         dtree.openTree();
     }
+    alert();
     layui.use(['layer', 'form', 'layedit','table', 'util','dtree', 'admin', 'upload','formSelects',], function () {
         var $ = layui.jquery;
         var layer = layui.layer;
@@ -186,7 +187,7 @@
                 console.log(pic);
             }
         });
-
+        alert();
         //拖拽上传
         var uploadInst=upload.render({
             elem: '#test10'

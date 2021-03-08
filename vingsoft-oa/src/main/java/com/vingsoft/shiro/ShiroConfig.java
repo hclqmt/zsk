@@ -61,6 +61,7 @@ public class ShiroConfig {
         filterChainDefinitions.put("/doc/knowledge/**", "anon");
         filterChainDefinitions.put("/doc/praise/**", "anon");
         filterChainDefinitions.put("/doc/sysUser/**", "anon");
+        filterChainDefinitions.put("/doc/addressBook/**", "anon");
         filterChainDefinitions.put("/**", "mlfc,authc");
 
         shiroFilter.setFilterChainDefinitionMap(filterChainDefinitions);

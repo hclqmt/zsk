@@ -24,6 +24,7 @@
 </div>
 <div id="addFrom" style="margin: 0 auto;width: 600px;height: 400px;display: none">
 <form class="layui-form" lay-filter="forms"  id="froms" style="margin-top: 20px">
+    <input type="hidden" id="userName" value="${userName}">
     <input type="hidden" id="id" name="id">
     <div class="layui-form-item">
         <label  class="layui-form-label">姓名：<span style="color: red">*</span></label>
@@ -81,7 +82,7 @@
 </script>
 <script>
     layui.config({
-        base: '${ctxPath}/plugins/layuiadmin/layui_exts/' //静态资源所在路径
+        base: '${ctxPath}/plugins/layuiadmin/' //静态资源所在路径
     }).use(['layer','table','form','excel'], function () {
         var $ = layui.jquery;
         var layer = layui.layer;
@@ -161,6 +162,10 @@
             }else if(obj.event === 'edit'){
                 openAddUpdate(data,'修改联系人')
             }else if(obj.event === 'leaveMsg'){
+                if ($("#userName").val()===data.name){
+                    layer.msg("自己不需要给自己回复哦", {icon: 2});
+                    return false;
+                }
                 layer.prompt({title: '回复：'+data.name, formType: 2}, function(senderContent, index){
                     $.post({
                         url: '${ctxPath}/doc/addressBook/addLeave',

@@ -109,14 +109,15 @@ public class DocKnowledgeController extends BaseController {
 	@ApiOperation(value="添加文档知识页面")
 	public ModelAndView addInfo(HttpServletRequest request) {
 		SysUser user = LoginUser.getInstance();
-		if (ObjectKit.isNotNull(user)){
-			mav.setViewName(PREFIX+"knowledge_add");
-		}else{
-			String servletPath = request.getServletPath();
-			mav.addObject("requestURI",servletPath);
-			mav.setViewName("redirect:/login");
-			return mav;
-		}
+//		if (ObjectKit.isNotNull(user)){
+//			mav.setViewName(PREFIX+"knowledge_add");
+//		}else{
+//			String servletPath = request.getServletPath();
+//			mav.addObject("requestURI",servletPath);
+//			mav.setViewName("redirect:/login");
+//			return mav;
+//		}
+		mav.setViewName(PREFIX+"knowledge_add");
 		List<SysDict> labelList = sysDictService.findAllByType("label");
 		mav.addObject("labelList",labelList);
 		return mav;

@@ -4,16 +4,26 @@
     <div class="form-group mt-3">
         <!--# if(type=='0'){ -->
             <label>知识：<button type="button" class="btn btn-light mr-2 ml-2">${docKnowledge.knowledgeName}</button></label>
+            <div class="alert alert-primary" role="alert">
+                ${message.content}
+            </div>
         <!--# }else if(type=='1'){ -->
             <label>回复人：<button type="button" class="btn btn-light mr-2 ml-2">${message.senderName}</button></label>
+            <div class="alert alert-primary" role="alert">
+                ${message.content}${message.senderContent}
+            </div>
         <!--# }else if(type=='2'){ -->
             <label>留言：<button type="button" class="btn btn-light mr-2 ml-2">${message.nickname}</button></label>
+            <div class="alert alert-primary" role="alert">
+                ${message.content}
+            </div>
         <!--# }else if(type=='3'){ -->
             <label>回复人：<button type="button" class="btn btn-light mr-2 ml-2">${message.senderName}</button></label>
+            <div class="alert alert-primary" role="alert">
+                ${message.senderContent}
+            </div>
         <!--# } -->
-        <div class="alert alert-primary" role="alert">
-            ${message.content}${message.senderContent}
-        </div>
+
     </div>
     <button onclick="history.back();" class="btn btn-primary">返回消息列表</button>
 </div>

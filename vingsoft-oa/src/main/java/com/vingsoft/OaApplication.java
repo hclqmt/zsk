@@ -15,7 +15,6 @@
 */
 package com.vingsoft;
 
-import com.vingsoft.fileManage.ossService.EnableOssService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -41,7 +40,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @date 2018年11月21日
  * 
  */
-@EnableOssService
 @SpringBootApplication
 @EnableScheduling
 public class OaApplication  extends SpringBootServletInitializer {

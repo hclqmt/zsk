@@ -14,7 +14,7 @@ import java.util.List;
 * gen by beetlsql 2020-06-22
 */
 @Data
-@Table(name="zsk_task.zsk_leave_message")
+@Table(name="zsk_leave_message")
 public class LeaveMessage extends BaseEntity implements Serializable {
 	/*
 	主键

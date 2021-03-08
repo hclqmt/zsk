@@ -8,7 +8,6 @@ import com.aliyun.oss.model.PutObjectResult;
 import com.vingsoft.core.response.LayuiResponse;
 import com.vingsoft.fileManage.core.FileManage;
 import com.vingsoft.fileManage.utils.FileUtil;
-import com.vingsoft.fileManage.utils.OssUtils;
 import com.vingsoft.fileManager.client.FileInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -47,7 +46,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("file/file.do")
 @Api(tags="文件管理")
 public class FileController {
 
@@ -55,9 +54,6 @@ public class FileController {
 	
 	@Autowired
 	private FileManage fileManage;
-
-	@Autowired
-	private OssUtils ossUtils;
 
 
 	private static String ENDPOINT = "oss-cn-shdangdslfhai.aliyuncs.com";
@@ -77,7 +73,7 @@ public class FileController {
 	 * @return
 	 * @throws Exception
 	 */
-	@PostMapping(produces="application/json;charset=utf-8")
+	@PostMapping(params = "method=file",produces="application/json;charset=utf-8")
 	@ResponseBody
 	@ApiOperation(value="上传文件,并返回layui指定json格式",produces = MediaType.APPLICATION_JSON_VALUE)
 	public LayuiResponse upload(MultipartFile file) throws Exception {
@@ -320,15 +316,6 @@ public class FileController {
 		return response;
 	}
 
-	@ResponseBody
-	@RequestMapping(value = "/photouploadUrl")
-	public Object upload(HttpServletRequest request,MultipartFile file) {
-		StandardMultipartHttpServletRequest req = (StandardMultipartHttpServletRequest) request;
-		Iterator<String> iterator = ((StandardMultipartHttpServletRequest) req).getFileNames();
-		while (iterator.hasNext()) {
-			file = req.getFile(iterator.next());
-		}
-		return ossUtils.upload(file);
-	}
+
 
 }
